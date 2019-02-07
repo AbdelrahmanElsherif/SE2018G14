@@ -1,0 +1,47 @@
+<?php require_once('common.php');
+requiresAuthentication();
+require_once("header.php");
+?>
+   <div class="content">
+   <header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Intern.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Browse</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Search</a>
+      </li>
+    </ul>
+	<ul class="pull-right navbar-nav">
+	 <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="profile.php">Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="logout.php">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+<div class="content container">
+<section>
+<h2>Featured Internships</h2>
+
+</section>
+</div>
+</div>
+<?php require_once("footer.php"); ?>
