@@ -17,7 +17,7 @@ function generateSelect($name, $array){
 $id = getId($name);
 ?>
 <div class="form-group">
-    <label for="<?php echo $id; ?>"><?php ucfirst($name); ?></label>
+    <label for="<?php echo $id; ?>"><?php echo ucfirst($name); ?></label>
     <select class="form-control" id="<?php echo $id; ?>" name="<?php echo $id; ?>">
 	<?php foreach ($array as $key => $item){
 		echo "<option value='".$key."'>".$item."</option>";
@@ -36,7 +36,9 @@ generateSelect("Academic Year", $types);
 generateInput("Role", "text");
 generateInput("Description", "text");
 ?>
-<input type='submit' class="text-center" value='Publish'></input>
+<div class="text-center">
+<input type='submit' value='Publish'></input>
+</div>
 </form>
 </div>
 <?php require_once("footer.php"); ?>
