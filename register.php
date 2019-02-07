@@ -1,6 +1,6 @@
 <?php include ("common.php");
 $css = array("css/style.css");
-require_once("header.php");?>
+require_once("global_header.php");?>
     <div class="header">
       <h2>Register</h2>
 
@@ -35,4 +35,4 @@ require_once("header.php");?>
         Already a member? <a href="login.php">Sign in</a>
       </p>
     </form>
-<?php require_once("footer.php"); ?>
+<?php require_once("global_footer.php"); ?>
