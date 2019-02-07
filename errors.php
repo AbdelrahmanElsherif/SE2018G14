@@ -1,9 +1,10 @@
 <?php 
  if (isset($errors) && count($errors) > 0):?>
-  <div class="error">
-    <?php  foreach ($errors as $error): ?>
-      <p> <?php echo $error; ?></p>
+  <div class="error alert alert-danger">
+    <ul><?php  foreach ($errors as $error): ?>
+      <li><?php echo $error; ?></li>
     <?php endforeach ?>
+	</ul>
   </div>
 <?php endif ?>
 
