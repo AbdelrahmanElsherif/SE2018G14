@@ -1,5 +1,5 @@
 <?php
-$required_fields = array("title", "company", "field", "city", "period", "type", "academic_year", "role", "description");
+$required_fields = array("company", "field", "city", "period", "type", "academic_year", "role", "description");
 
 function getName($name)
 {
@@ -79,7 +79,7 @@ if ($_POST)
 {
 	
 	$errors = array();
-	foreach ($required_fields as $field) { if (!isset($_POST[$field])) { $errors[] = "'".ucfirst($field)."' is a required field, but it was left blank.";} } 
+	foreach ($required_fields as $field) { if (!isset($_POST[$field])) { $errors[] = "'".ucfirst(getName($field))."' is a required field, but it was left blank.";} } 
 	
 	if (!$errors)
 	{
