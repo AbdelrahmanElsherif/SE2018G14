@@ -32,12 +32,12 @@ $id = getId($name);
 <form method='POST'>
 <?php generateInput("Email", "email"); generateInput("Company");  generateSelect("Field", $fields); generateSelect("City", $cities);
 generateSelect("Period", $periods);  generateSelect("Type", $types);
-generateSelect("Academic Year", array(1,2,3,4,5,6,7));
+generateSelect("Academic Year", $academic_years);
 generateInput("Role", "text");
 generateInput("Description", "text");
 ?>
 <div class="text-center">
-<input type='submit' value='Publish'></input>
+<input type='submit' class="btn btn-primary" value='Publish'></input>
 </div>
 </form>
 </div>
