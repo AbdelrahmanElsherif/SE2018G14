@@ -2,7 +2,7 @@
 requiresAuthentication();
 require_once("global_header.php");
 ?>
-   <div class="content">
+<div class="content">
    <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Intern.com</a>
@@ -37,11 +37,5 @@ require_once("global_header.php");
   </div>
 </nav>
 </header>
-<div class="content container">
-<section>
-<h2>Featured Internships</h2>
-
-</section>
-</div>
 </div>
 <?php require_once("footer.php"); ?>
