@@ -79,7 +79,7 @@ if ($_POST)
 {
 	
 	$errors = array();
-	foreach ($required_fields as $field) { if (!isset($POST[$field])) { $errors[] = "'".ucfirst($field)."' is a required field, but it was left blank.";} } 
+	foreach ($required_fields as $field) { if (!isset($_POST[$field])) { $errors[] = "'".ucfirst($field)."' is a required field, but it was left blank.";} } 
 	
 	$field = checkExists($_POST['field'], $fields);
 	$city = checkExists($_POST['city'], $cities);
