@@ -99,7 +99,7 @@ if ($_POST)
 			"academic_year" => $academic_year,
 			"role" => sanitizeField($_POST['role']),
 			"description" => sanitizeField($_POST['description'])));
-			$_SESSION['success'] = "Your internship has been posted successfully.";
+			$_SESSION['success'][] = "Your internship has been posted successfully.";
 		}
 		else
 		{
