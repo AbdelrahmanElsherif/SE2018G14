@@ -64,7 +64,7 @@ catch (PDOException $ex)
 	}
 	function requiresAuthentication()
 	{
-		if (!isset($_SESSION['user']) || !$_SESSION['user']) header("Location: login.php	");
+		if (!isset($_SESSION['user']) || !$_SESSION['user']) header("Location: login.php");
 	}
 session_start(); 
 if (file_exists(getcwd()."/backend/".basename($_SERVER['PHP_SELF']))) require_once(getcwd()."/backend/".basename($_SERVER['PHP_SELF']));
