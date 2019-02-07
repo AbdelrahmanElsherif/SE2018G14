@@ -1,5 +1,6 @@
 <?php require_once('common.php');
 requiresAuthentication();
+$css = array("css/main.css");
 require_once("global_header.php");
 ?>
 <div class="content">
