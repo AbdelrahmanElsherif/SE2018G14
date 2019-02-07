@@ -2,6 +2,7 @@
 requiresAuthentication();
 $css = array("css/main.css");
 require_once("global_header.php");
+require_once("view_functions.php");
 ?>
 <div class="content">
    <header>

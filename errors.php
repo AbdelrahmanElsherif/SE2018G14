@@ -9,9 +9,10 @@
 <?php endif ?>
 
 <?php  if (isset($_SESSION['success']) && $_SESSION['success']):?>
-  <div class="error success">
+  <div class="error success alert alert-success">
     <?php  foreach ($_SESSION['success'] as $success): ?>
       <p> <?php echo $success; ?></p>
     <?php endforeach ?>
+	<?php unset($_SESSION['success']); ?>
   </div>
 <?php endif ?>
