@@ -6,8 +6,6 @@ function login($email, $password)
 	if ($user && password_verify($password, $user['password']))
     {
 		$_SESSION['user'] = $user;
-		print_r($user);
-		exit();
 		unset($_SESSION['user']['password']);
 		return true;
 	}
