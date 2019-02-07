@@ -83,3 +83,6 @@ form, .content{
   margin-bottom: 20px;
   align-self: center;
 }
+.content.container{
+padding:15px;
+}
