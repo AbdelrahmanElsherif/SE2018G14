@@ -81,28 +81,31 @@ if ($_POST)
 	$errors = array();
 	foreach ($required_fields as $field) { if (!isset($_POST[$field])) { $errors[] = "'".ucfirst($field)."' is a required field, but it was left blank.";} } 
 	
-	$field = checkExists($_POST['field'], $fields);
-	$city = checkExists($_POST['city'], $cities);
-	$period = checkExists($_POST['periods'], $periods);
-	$type = checkExists($_POST['type'], $types);
-	$academic_year = checkExists($_POST['field'], $academic_years);
-	
-	if ($field !== false && $city !== false  && $period  !== false && $type !== false  && $academic_year !== false)
+	if (!$errors)
 	{
-		mysql_insert("internship", array("user_id" => $_SESSION['user']['id'],
-		"title" => sanitizeField($_POST['title']),
-		"company" => sanitizeField($_POST['company']),
-		"field" => $field,
-		"city" => $city,
-		"period" => $period,
-		"type" => $type,
-		"academic_year" => $academic_year,
-		"role" => sanitizeField($_POST['role']),
-		"description" => sanitizeField($_POST['description'])));
-	}
-	else
-	{
-		$errors[] = "Malformed request. Please try again.";
+		$field = checkExists($_POST['field'], $fields);
+		$city = checkExists($_POST['city'], $cities);
+		$period = checkExists($_POST['periods'], $periods);
+		$type = checkExists($_POST['type'], $types);
+		$academic_year = checkExists($_POST['field'], $academic_years);
+		
+		if ($field !== false && $city !== false  && $period  !== false && $type !== false  && $academic_year !== false)
+		{
+			mysql_insert("internship", array("user_id" => $_SESSION['user']['id'],
+			"title" => sanitizeField($_POST['title']),
+			"company" => sanitizeField($_POST['company']),
+			"field" => $field,
+			"city" => $city,
+			"period" => $period,
+			"type" => $type,
+			"academic_year" => $academic_year,
+			"role" => sanitizeField($_POST['role']),
+			"description" => sanitizeField($_POST['description'])));
+		}
+		else
+		{
+			$errors[] = "Malformed request. Please try again.";
+		}
 	}
 }
 ?>

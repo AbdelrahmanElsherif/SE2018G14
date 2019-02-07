@@ -1,7 +1,7 @@
 <?php require_once('header.php'); 
 function getId($name)
 {
-	return str_replace(" ", "", strtolower($name));
+	return str_replace(" ", "_", strtolower($name));
 }
 function generateInput($name, $type = "text")
 {
