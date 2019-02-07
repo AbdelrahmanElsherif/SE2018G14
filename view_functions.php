@@ -26,3 +26,4 @@ $id = getId($name);
 </div>
 <?php
 }
+?>
