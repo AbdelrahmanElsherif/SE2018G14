@@ -9,7 +9,13 @@ $id = getId($name);
 ?>
 <div class="form-group">
     <label for="<?php echo $id; ?>"><?php echo ucfirst($name); ?></label>
+	<?php if ($type != "textarea") { ?> 
 	<input type="<?php echo $type; ?>" class="form-control" id="<?php echo $id; ?>" name="<?php echo $id; ?>" placeholder="<?php echo ucfirst($name); ?>"></input>
+	<?php } else {
+		?>
+		<textarea type="<?php echo $type; ?>" class="form-control" id="<?php echo $id; ?>" name="<?php echo $id; ?>" placeholder="<?php echo ucfirst($name); ?>"></textarea>
+		<?php
+	} ?>
 </div>
 <?php	
 }
