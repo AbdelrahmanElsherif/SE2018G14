@@ -6,7 +6,6 @@ function getName($name)
 	return str_replace("_", " ", $name);
 }
 $fields = getConstant("fields");
-print_r($fields);
 $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
