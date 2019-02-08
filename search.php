@@ -127,6 +127,35 @@ require_once("common.php");
     </form>
   </body>
 </html>
+<?php
+
+session_start();
+
+$search_bar ="";
+$period = "";
+$type = "";
+$field = "";
+$city= "";
+$academic_year = "";
+$errors = array();
+
+if (isset($_POST['searchbtn'])) {
+  $search_bar = $_POST['searchBar'];
+  $period = $_POST['period'];
+  $type = $_POST['type'];
+  $field = $_POST['field'];
+  $city= $_POST['city'];
+  $academic_year= $_POST['Academic_Year'];
+
+// Empty Search Bar
+
+if (empty($search_bar)){
+    array_push($errors, "Invalid Search");
+  }
+
+ 
+}
+?>
  <?php
  require_once("footer.php");
 ?>
