@@ -1,6 +1,10 @@
 <?php
 require_once("header.php");
 ?>
+<?php
+require_once("common.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
