@@ -6,6 +6,7 @@ function getName($name)
 	return str_replace("_", " ", $name);
 }
 $fields = getConstant("fields");
+print_r($fields);
 $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
@@ -22,7 +23,7 @@ function sanitizeField($value)
 if ($_POST)
 {
 	$errors = array();
-	foreach ($required_fields as $field) { if (!isset($_POST[$field]) || empty($_POST[$field])) { $errors[] = "'".ucfirst(getName($field))	."' is a required field, but it was left blank.";} } 
+	foreach ($required_fields as $field) { if (!isset($_POST[$field]) || empty($_POST[$field]) && $_POST[$field] !== 0) { $errors[] = "'".ucfirst(getName($field))	."' is a required field, but it was left blank.";} } 
 	
 	if (!$errors)
 	{
