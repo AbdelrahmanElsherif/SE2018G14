@@ -9,7 +9,7 @@ $fields = getConstant("fields");
 $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
-$academic_years = getConstant("academic_year");
+$academic_years = getConstant("academic_years");
 function checkExists($key, $array)
 {
 	if (isset($array[$key])) return $array[$key];
