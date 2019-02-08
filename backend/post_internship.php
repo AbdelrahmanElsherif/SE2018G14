@@ -34,7 +34,7 @@ if ($_POST)
 		
 		if ($field !== false && $city !== false  && $period  !== false && $type !== false  && $academic_year !== false)
 		{
-			mysql_insert("internship", array("user_id" => $_SESSION['user']['id'],
+			$params = array("user_id" => $_SESSION['user']['id'],
 			"title" => sanitizeField($_POST['title']),
 			"company" => sanitizeField($_POST['company']),
 			"field" => $field,
@@ -43,8 +43,23 @@ if ($_POST)
 			"type" => $type,
 			"academic_year" => $academic_year,
 			"role" => sanitizeField($_POST['role']),
-			"description" => sanitizeField($_POST['description'])));
-			$_SESSION['success'][] = "Your internship has been posted successfully.";
+			"description" => sanitizeField($_POST['description']));
+			$row = mysql_select("internship", "AND", $params)->fetch(); //This will be slow on large records; not recommended. Placing it for now anyway to prevent duplicates till we find a better approach.
+			if (!$row) 
+			{
+				if (mysql_insert("internship", $params))
+				{ 
+					$_SESSION['success'][] = "Your internship has been posted successfully.";
+				}
+				else
+				{
+					$errors[] = "An error occurred while submitting your internship. Please try again later";
+				}
+			}
+			else
+			{
+				$errors[] = "You have already submitted this record before.";
+			}
 		}
 		else
 		{
