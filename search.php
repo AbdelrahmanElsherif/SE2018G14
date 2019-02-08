@@ -9,19 +9,7 @@ require_once("header.php");
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-<div class="header">
 
-      <!-- <a href="#">Home</a>
-      <a href="#">Post Internship</a>
-      <a href="#">Manage Applications</a> -->
-  <!-- <span class="hamburger"></span> -->
-       <input type="button" name="Home" value="Home">
-       <input type="button" name="Post Internship" value="Post Internship">
-       <input type="button" name="Manage Applications" value="Manage Applications">
-
-      <!-- <body bgcolor="bac3d1"> -->
-        <!-- <span class="hamburger"></span><input type="button" id="menu" value="MENU"><input type="button" id="login" value="LOGIN">    <input type="button" id="signup" value="SIGN UP"/> -->
-    </div>
 
     <form action="" method="post">
       <?php include ('errors.php') ?>
