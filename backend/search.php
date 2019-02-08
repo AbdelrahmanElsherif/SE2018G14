@@ -38,7 +38,7 @@
       <th>Deadline</th>
      </tr>
      <?php
-    $conn = mysqli_connect("localhost", "root", "", "internship");
+    $conn = mysqli_connect("localhost", "internship", "qBCx6Q83aa3wY3ZMaSxM", "internship");
       // Check connection
       if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
