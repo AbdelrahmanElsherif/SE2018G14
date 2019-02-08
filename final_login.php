@@ -176,9 +176,9 @@ a {
 <button onclick="document.getElementById('id02').style.display='block'" style="width:10%; margin:8px;">Register</button>
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="login.php">
+  <form class="modal-content animate" action="index.php">
 
-
+<?php include ('errors.php') ?>
     <div class="container">
       <label for="uname"><b>Username/Email</b></label>
       <input type="text" placeholder="Enter Username" name="uname" placeholder= "Enter Email"  required >
@@ -199,7 +199,7 @@ a {
 </div>
 
 <div id="id02" class="modal">
-  <form class="modal-content animate" action="register.php">
+  <form class="modal-content animate" action="index.php">
 
   <div class="container">
     <h1>Register</h1>
