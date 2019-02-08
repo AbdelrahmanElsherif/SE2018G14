@@ -1,4 +1,4 @@
-//<?php include ('common.php.template'); ?>
+
 <?php
 require_once("header.php");
 ?>
