@@ -24,7 +24,7 @@ require_once("view_functions.php");
         <a class="nav-link" href="post_internship.php">Post Internship</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Manage Applications</a>
+        <a class="nav-link" href="application.php">Manage Applications</a>
       </li>
     </ul>
 	<ul class="pull-right navbar-nav">
