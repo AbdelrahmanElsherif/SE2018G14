@@ -18,7 +18,7 @@ require_once("view_functions.php");
         <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Explore</a>
+        <a class="nav-link" href="search.php">Explore</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="post_internship.php">Post Internship</a>
