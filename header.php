@@ -6,7 +6,7 @@ require_once("view_functions.php");
 ?>
 <div class="content">
    <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <a class="navbar-brand" href="index.php">Intern</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -32,15 +32,4 @@ require_once("view_functions.php");
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="profile.php">Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout.php">Logout</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-</header>
-</div>
-<?php require_once("footer.php"); ?>
+        <div class="dropdown-menu" aria-labelledby
