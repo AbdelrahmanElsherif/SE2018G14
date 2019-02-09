@@ -152,7 +152,7 @@ a {
 <button onclick="document.getElementById('id02').style.display='block'" style="width:10%; margin:8px;">Register</button>
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" method ="post" action="final_login.php">
+  <form class="modal-content animate" method ="post" action="login_test.php">
 
 <?php include ('errors.php') ?>
     <div class="container">
@@ -175,7 +175,7 @@ a {
 </div>
 
 <div id="id02" class="modal">
-  <form class="modal-content animate" method ="post" action="final_login.php">
+  <form class="modal-content animate" method ="post" action="register_test.php">
 
   <div class="container">
     <h1>Register</h1>
