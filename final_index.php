@@ -16,6 +16,6 @@ button {
 }
 </style>
 <p style="margin-top: 20px; margin-left:10px;">Intern.com   <button onclick="index.php" style="width:15%; margin:2px;">Home</button>
-<button onclick="#" action="post_internship.php" style="width:15%; margin:2px;">Explore</button><button onclick="final_login.php" style="width:15%; margin:2px;">Post Internship</button><button onclick="#" style="width:15%; margin:2px;">Manage Application</button></p>
+<button onclick="#" style="width:15%; margin:2px;">Explore</button><button onclick="final_login.php" style="width:15%; margin:2px;">Post Internship</button><button onclick="#" style="width:15%; margin:2px;">Manage Application</button></p>
 <?php require_once("global_footer.php"); ?>
 
