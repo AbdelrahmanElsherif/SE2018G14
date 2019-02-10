@@ -1,6 +1,6 @@
 <?php require_once('header.php'); ?>
 <?php
-<link rel="stylesheet" href="application_management_page.css">
+<link rel="stylesheet" href="application.css">
   echo"<h1>$title</h1>";
   <table>
     <tr>
