@@ -19,7 +19,7 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 
 button {
-  background-color:#c2c6a7;
+  background-color:rgb(108,117,125);
   font-size: 20px;
   color: black;
   padding: 10px 10px;
