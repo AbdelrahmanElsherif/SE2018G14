@@ -1,3 +1,5 @@
+<?php include ('common.php');
+$css = array("css/style.css");
 <?php require_once('header.php'); 
 ?>
 <style>
