@@ -1,7 +1,21 @@
 <?php
 require_once("header.php");
 ?>
-  <form method="post">
+<?php
+require_once("common.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Search Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+
+    <form action="search_results.php" method="post">
       <?php include ('errors.php') ?>
       <input type="text" name="searchBar" placeholder="Search..." value="" maxlength="25" autocomplete="off" onmousedown="" onblur=""/></br>
 
@@ -111,6 +125,9 @@ require_once("header.php");
 
 
     </form>
+  </body>
+</html>
+
 
  <?php
  require_once("footer.php");
