@@ -1,9 +1,3 @@
-<?php
-require_once("header.php");
-?>
-<?php
-require_once("common.php");
-?>
 <?php error_reporting(0); ?>
 
 
@@ -30,31 +24,6 @@ require_once("common.php");
  </style>
   <body>
     <body>
-
-      <?php
-      session_start();
-      $search_bar ="";
-      $period = "";
-      $type = "";
-      $field = "";
-      $city= "";
-      $academic_year = "";
-      $errors = array();
-      if (isset($_POST['searchbtn'])) {
-        $search_bar = $_POST['searchBar'];
-        $period = $_POST['period'];
-        $type = $_POST['type'];
-        $field = $_POST['field'];
-        $city= $_POST['city'];
-        $academic_year= $_POST['Academic_Year'];
-      // Empty Search Bar
-      if (empty($search_bar)){
-          array_push($errors, "Invalid Search");
-        }
-
-      }
-      header ('location: searchresult.php');
-      ?>
      <table>
      <tr>
       <th>Title</th>
@@ -84,9 +53,18 @@ require_once("common.php");
       //           $statement=$db->prepare($sql);
       //           $statement->execute([$period , $type, $field, $city, $academic_year]);
           //  $sql = "SELECT from internship where "
-      $result = $conn->query($sql);
-      $conn->close();
 
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+       // output data of each row
+       while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["title"]. "</td><td>" . $row["company"]. "</td><td>" . $row["field"]. "</td></tr>" . $row["city"]. "</td><td>" . $row["period"]. "</td><td>" . $row["academic_year"] . "</td><td>"
+        . $row["type"] . "</td><td>"
+. $row["role"] . "</td><td>" . $row["description"] . "</td><td>" . $row["deadline"] . "</td><td>";
+    }
+    echo "</table>";
+    } else { echo "0 results"; }
+    $conn->close();
     ?>
     </table>
     </body>
@@ -94,6 +72,3 @@ require_once("common.php");
 
   </body>
 </html>
-<?php
-require_once("common.php");
-?>
