@@ -1,5 +1,9 @@
-<?php require_once('header.php'); ?>
-<div class="content container">
+<?php include ('common.php');
+$css = array("css/style.css");
+require_once("global_header.php");
+?>
+
+
 <style>
 
  body {font-family: Arial, Helvetica, sans-serif; background-image: url(slide_one.jpg); font-size: 30px ;background-repeat:no-repeat;background-position: 50% 22% ;  background-size: 100%; }
@@ -45,6 +49,7 @@
   </style>
  </br>
 </br>
+<div class="content container">
  <h3  style="text-align:center;">Application for:</h3>
  <form action="#">
    <?php include ('errors.php') ?>
