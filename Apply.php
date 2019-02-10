@@ -65,4 +65,4 @@ require_once("global_header.php");
  </form>
 
 </div>
-<?php require_once("footer.php"); ?>
+<?php require_once("globalfooter.php"); ?>
