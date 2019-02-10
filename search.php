@@ -10,7 +10,7 @@ require_once("common.php");
   <head>
     <meta charset="utf-8">
     <title> Search Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
 
