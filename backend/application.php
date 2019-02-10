@@ -8,7 +8,7 @@ return $applications;
 }
 
 
-
+$applications=application($_GET['internship_id']);
 if($_POST)
 {
   if(isset($_POST['status']) && isset($_POST['application_id']))
