@@ -1,6 +1,6 @@
 <?php include ('common.php');
 $css = array("css/style.css");
-require_once("global_header.php");
+require_once("header.php");
 ?>
 
 
@@ -65,4 +65,4 @@ require_once("global_header.php");
  </form>
 
 </div>
-<?php require_once("globalfooter.php"); ?>
+<?php require_once("footer.php"); ?>
