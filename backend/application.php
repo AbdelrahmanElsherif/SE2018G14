@@ -19,6 +19,5 @@ if($_POST)
 
 }
 $applications=application($_GET['internship_id']);
-print_r($applications);
 
  ?>
