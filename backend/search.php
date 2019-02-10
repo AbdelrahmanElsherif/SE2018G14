@@ -53,7 +53,7 @@ require_once("common.php");
         }
 
       }
-      header ('location: search_results.php');
+      header ('location: searchresult.php');
       ?>
      <table>
      <tr>
