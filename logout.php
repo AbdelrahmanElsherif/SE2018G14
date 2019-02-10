@@ -1,2 +1,2 @@
-<?php require_once("common.php"); ?>
+<?php require_once("final_login.php"); ?>
 <p>Please wait while you are being redirected...</p>
