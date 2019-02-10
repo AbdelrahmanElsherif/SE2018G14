@@ -2,7 +2,7 @@
 require_once("common.php");
 function application ($id)
 {
-$applications = mysql_select("application","",array("internship_id=>$id"));
+$applications = mysql_select("application","",array("internship_id"=>$id));
 $applications=$applications->fetch();
 return $applications;
 }
