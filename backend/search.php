@@ -65,18 +65,7 @@
 
       }
 
-      <!-- // $sql = "mysql_select("internship", "AND" , array (
-      //             "period" => $period,
-      //             "title" => $search_bar,
-      //             "type" => $type,
-      //             "field" => $field,
-      //             "city" => $city,
-      //   if(isset($_POST['login'])){
-      // $sql="SELECT * from internship where period = $period And type = $type And field = $field And city = $city And academic_year = $academic_year";
-      //           $statement=$db->prepare($sql);
-      //           $statement->execute([$period , $type, $field, $city, $academic_year]);
-          //  $sql = "SELECT from internship where " -->
-
+      
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
