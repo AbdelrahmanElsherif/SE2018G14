@@ -182,10 +182,10 @@ a {
 }
 
 </style>
-</br>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:10%; margin:8px;">Login</button>
-<button onclick="document.getElementById('id02').style.display='block'" style="width:10%; margin:8px;">Register</button>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:10%; margin-top:4px; margin:8px;">Login</button>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:10%; margin-top:4px; margin:8px;">Register</button>
 <div id="id01" class="modal">
 
   <form class="modal-content animate" action="index.php">
