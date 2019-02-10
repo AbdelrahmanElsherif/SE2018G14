@@ -1,5 +1,4 @@
-
-<?php require_once('globalheader.php'); ?>
+<?php require_once('header.php'); ?>
 <div class="content container">
 <style>
 
@@ -61,4 +60,4 @@
  </form>
 
 </div>
-<?php require_once("globalfooter.php"); ?>
+<?php require_once("footer.php"); ?>
