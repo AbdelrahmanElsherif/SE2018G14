@@ -31,6 +31,6 @@ require_once("view_functions.php");
 	 <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong>
-		<select>logout</select>
+		<select>logged in as <option>logout</option></select>
         </a>
         <div class="dropdown-menu" aria-labelledby
