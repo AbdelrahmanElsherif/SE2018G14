@@ -7,5 +7,11 @@
 </div>
 
 <?php require_once("footer.php"); ?>
-</br>
+
+<?php include ('common.php');
+$css = array("css/style.css");
+require_once("global_header.php");
+?>
+
 <h1  style="text-align:center;">Application for:</h1>
+<?php require_once("global_footer.php"); ?>
