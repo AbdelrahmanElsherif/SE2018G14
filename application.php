@@ -1,6 +1,6 @@
 <?php 
 $css = array("css/application.css");
-require_once('header.php');
+require_once("header.php");
 echo "<h1>$title</h1>"; ?>
   <table>
     <tr>
