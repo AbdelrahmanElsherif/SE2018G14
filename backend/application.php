@@ -1,5 +1,6 @@
 <?php
 require_once("common.php");
+reuiresAuthentication();
 function application ($id)
 {
 $applications = mysql_select("application","",array("internship_id"=>$id));
