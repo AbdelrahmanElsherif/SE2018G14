@@ -10,7 +10,7 @@ echo "<h1>$title</h1>"; ?>
     foreach ($applications as $application) {
       
       echo "<tr>
-        <td>$application <input type='submit' name='' value='Accept'> <input type='submit' name='' value='Reject'></td>
+        <td>".$application['mobile']." <input type='submit' name='' value='Accept'> <input type='submit' name='' value='Reject'></td>
       </tr>";
     }
 ?>   
