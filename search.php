@@ -15,7 +15,7 @@ require_once("common.php");
   <body>
 
 
-    <form action="search_results.php" method="post">
+    <form action="search_result.php" method="post">
       <?php include ('errors.php') ?>
       <input type="text" name="searchBar" placeholder="Search..." value="" maxlength="25" autocomplete="off" onmousedown="" onblur=""/></br>
 
