@@ -1,11 +1,64 @@
 
-<?php require_once('header.php'); ?>
+<?php require_once('globalheader.php'); ?>
 <div class="content container">
 <style>
- body {font-family: Arial, Helvetica, sans-serif; background-image: url(slide_one.jpg); font-size: 20px ;background-repeat:no-repeat;background-position: 50% 22% ; background-size: 100%; }
- </style>
- </br>
- <h1  style="text-align:center;">Application for:</h1>
-</div>
-<?php require_once("footer.php"); ?>
 
+ body {font-family: Arial, Helvetica, sans-serif; background-image: url(slide_one.jpg); font-size: 30px ;background-repeat:no-repeat;background-position: 50% 22% ;  background-size: 100%; }
+
+ .container {
+   padding: 20px;
+ }
+ input[type=text], input[type=file] {
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+ }
+
+ input[type=text]:focus, input[type=file]:focus {
+   background-color: #ddd;
+   outline: none;
+ }
+ button {
+   background-color:rgb(108,117,125);
+   font-size: 20px;
+   color: black;
+   padding: 10px 10px;
+   margin: 4px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+ }
+ .submitbtn {
+   background-color: rgb(108,117,125);
+   color: white;
+   padding: 16px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 50%;
+
+   right: 100%;
+   margin-left: 50%;
+ }
+  </style>
+ </br>
+</br>
+ <h3  style="text-align:center;">Application for:</h3>
+ <form action="#">
+   <?php include ('errors.php') ?>
+       <div class="container">
+         <label for="mobileno"><b>Mobile no.:</b></label>
+         <input type="text" placeholder="Enter phone no." name="uname"   required >
+
+</br> </br>
+         <label for="CV"><b>CV : </b></label>
+         <input type="file" placeholder="please attach your CV.." name="CV" required>
+         <button type="submit" class="submitbtn" >submit</button>
+       </div>
+ </form>
+
+</div>
+<?php require_once("globalfooter.php"); ?>
