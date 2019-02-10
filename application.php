@@ -1,5 +1,5 @@
-<?php 
-$css = array("css/application.css");
+<?php include ('common.php');
+$css = array("css/style.css");
 require_once("header.php");
 echo "<h1>$title</h1>"; ?>
   <table>
