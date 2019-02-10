@@ -1,16 +1,18 @@
-<?php require_once('header.php'); ?>
-<?php
-<link rel="stylesheet" href="application.css">
-  echo"<h1>$title</h1>";
+<?php 
+$css = array("css/application.css");
+require_once('header.php');
+echo "<h1>$title</h1>"; ?>
   <table>
     <tr>
       <th>List of applications</th> <th>Accepted</th> <th>Rejected</th>
     </tr>
+    <?php 
     foreach ($applications as $application) {
-      <tr>
-        <td>$application <input type="submit" name="" value="Accept"> <input type="submit" name="" value="Reject"> </td>
-      </tr>
+      
+      echo "<tr>
+        <td>$application <input type='submit' name='' value='Accept'> <input type='submit' name='' value='Reject'></td>
+      </tr>";
     }
+?>   
   </table>
-?>
 <?php require_once("footer.php"); ?>
