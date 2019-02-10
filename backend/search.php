@@ -43,18 +43,42 @@
       if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
       }
-      // $sql = "mysql_select("internship", "AND" , array (
+      session_start();
+      $search_bar ="";
+      $period = "";
+      $type = "";
+      $field = "";
+      $city= "";
+      $academic_year = "";
+      $errors = array();
+      if (isset($_POST['searchbtn'])) {
+        $search_bar = $_POST['searchBar'];
+        $period = $_POST['period'];
+        $type = $_POST['type'];
+        $field = $_POST['field'];
+        $city= $_POST['city'];
+        $academic_year= $_POST['Academic_Year'];
+      // Empty Search Bar
+      if (empty($search_bar)){
+          array_push($errors, "Invalid Search");
+        }
+
+      }
+
+      <!-- // $sql = "mysql_select("internship", "AND" , array (
       //             "period" => $period,
       //             "title" => $search_bar,
       //             "type" => $type,
       //             "field" => $field,
       //             "city" => $city,
-      $sql="SELECT * from internship where period = $period And type = $type And field = $field And city = $city And academic_year = $academic_year";
+      //   if(isset($_POST['login'])){
+      // $sql="SELECT * from internship where period = $period And type = $type And field = $field And city = $city And academic_year = $academic_year";
       //           $statement=$db->prepare($sql);
       //           $statement->execute([$period , $type, $field, $city, $academic_year]);
-          //  $sql = "SELECT from internship where "
+          //  $sql = "SELECT from internship where " -->
 
       $result = $conn->query($sql);
+
       if ($result->num_rows > 0) {
        // output data of each row
        while($row = $result->fetch_assoc()) {
