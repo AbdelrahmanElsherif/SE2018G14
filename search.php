@@ -127,7 +127,7 @@ require_once("common.php");
     </form>
   </body>
 </html>
-<?php
+
 
  <?php
  require_once("footer.php");
