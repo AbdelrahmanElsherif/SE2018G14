@@ -1,6 +1,6 @@
 <?php
 require_once("functions.php");
-$required_fields = array("title", "company", "field", "city", "period", "type", "academic_year", "role", "description");
+$required_fields = array("company", "field", "city", "period", "type", "academic_year", "role", "description");
 
 $fields = getConstant("fields");
 $cities = getConstant("cities");
@@ -22,7 +22,6 @@ if ($_POST)
 		if ($field !== false && $city !== false  && $period  !== false && $type !== false  && $academic_year !== false)
 		{
 			$params = array("user_id" => $_SESSION['user']['id'],
-			"title" => sanitizeField($_POST['title']),
 			"company" => sanitizeField($_POST['company']),
 			"field" => $field,
 			"city" => $city,
