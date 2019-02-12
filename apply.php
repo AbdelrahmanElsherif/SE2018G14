@@ -55,9 +55,9 @@ require_once("header.php");
  <form method="POST">
    <?php include ('errors.php');
    generateInput("Mobile");
-   generateInput("CV", "file");
+   generateInput("CV File", "file");
    ?>
-   <input type="submit" class="btn btn-primary" 
+   <input type="submit" class="btn btn-primary" value="Apply"></input>
  </form>
 
 </div>
