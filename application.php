@@ -15,8 +15,8 @@ require_once("backend/functions.php");
 	<tbody>
     <?php 
     while ($row = $stmt->fetch()) {
-		$application['user_id'] = getUser($application['user_id'])['name'];
-      generateRow($application);
+		$row['user_id'] = getUser($row['user_id'])['name'];
+      generateRow($row);
     }
 ?>   
 	</tbody>
