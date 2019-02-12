@@ -7,7 +7,7 @@ if (!$internship) header("Location: search.php");
 $required_fields = array("mobile", "internship_id");
 if ($_POST)
 {
-	$errors = checkRequiredFields($required_fields);
+	$errors = checkRequiredFields($required_fields, $_POST);
 	if (!$errors)
 	{
 		$mobile = $_POST['mobile'];
