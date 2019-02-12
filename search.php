@@ -12,6 +12,7 @@ if (!isset($_GET['q']))
 generateSelect("Period", $periods); generateSelect("Type", $types);
 generateSelect("Academic Year", $academic_years);?>
 <input type="submit" class="btn btn-primary" value="Search"/>
+<p></br></p>
     </form>
  <?php
 }
@@ -19,7 +20,7 @@ else
 {
 	?>
 	<h2>Search Results</h2>
-</br>
+	
 	<?php
 	showSearch($stmt);
 }
