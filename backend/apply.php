@@ -1,7 +1,7 @@
 <?php
 require_once("functions.php");
 $internship = false;
-if (isset($_GET['internship_id']) && $_GET['internship_id']) $internship = getInternship($_GET['internship_id'])
+if (isset($_GET['internship_id']) && $_GET['internship_id']) $internship = getInternship($_GET['internship_id']);
 if (!$internship) header("Location: search.php");
 
 $required_fields = array("mobile", "internship_id");
