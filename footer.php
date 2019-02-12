@@ -2,9 +2,13 @@
 requiresAuthentication();
 $css = array("css/main.css");
 require_once("global_footer.php");
-require_once("view_functions.php");
+require_once("view_fu
+nctions.php");
 ?>
 <style>
+a{
+  color: white;
+}
 .footer {
  position: fixed;
  left: 0;
@@ -60,7 +64,7 @@ require_once("view_functions.php");
 </style>
 
 <div class="footer">
- <p style="font-size:14px; color:'balck';">SE2018G14 @ 2019 &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; About &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Terms of use &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Privacy Policy &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Developers  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Language  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; mobile  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Intern.com &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;  <!-- Add icon library -->
+ <p style="font-size:14px; color:'balck';">SE2018G14 @ 2019 &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" value='about'>About</a> &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Terms of use </a> &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Privacy policy </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Developers </a> &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Language </a> &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; <a href="#" >Mobile </a> &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;  <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -70,5 +74,5 @@ require_once("view_functions.php");
 <a href="#" class="fa fa-google"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#" class="fa fa-linkedin"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#" class="fa fa-youtube"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#" class="fa fa-instagram"></a> </p>  
+<a href="#" class="fa fa-instagram"></a>   &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; Intern.com  </p>
 </div>
