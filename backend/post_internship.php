@@ -10,7 +10,7 @@ $academic_years = getConstant("academic_years");
 
 if ($_POST)
 {
-	$errors = checkRequiredFields($required_fields);
+	$errors = checkRequiredFields($required_fields, $_POST);
 	if (!$errors)
 	{
 		$field = checkExists($_POST['field'], $fields);
