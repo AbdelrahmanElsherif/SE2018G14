@@ -19,19 +19,24 @@ else
 {
 	?>
 	<h2>Search Results</h2>
-    <table>
-      <th>Company</th>
-      <th>Field</th>
+    <table class="table">
+	<thead>
       <th>Position</th>
-      <th>Description</th>
+      <th>Company</th>
       <th>City</th>
       <th>Period</th>
-	  
+      <th>Field</th>
+      <th>Description</th>
+	  </thead>
+	  <tbody>
 	  <?php
 	  while ($row = $stmt -> fetch()){
+		  unset($row['id']);
+		  unset($row['user_id']);
         generateRow($row);
        }
 	  ?>
+	  </tbody>
     </table>
 	<?php
 }
