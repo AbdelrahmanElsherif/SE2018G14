@@ -2,7 +2,7 @@
 function hasAccess($id, $user_id)
 {
 	$internship = getInternship($id)['user_id'];
-	return ($internship && $user_id == $internship)
+	return ($internship && $user_id == $internship);
 }
 function getUser($id)
 {
