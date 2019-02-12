@@ -1,5 +1,5 @@
 <?php
-require_once("common.php");
+require_once("functions.php");
 if($_POST)
 {
   if(isset($_POST['status']) && isset($_POST['application_id']))
