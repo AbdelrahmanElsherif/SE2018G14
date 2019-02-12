@@ -5,13 +5,17 @@
  </style>-->
 <h1>Featured</h1>
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" alt="Explore Internships">
   <div class="card-body">
     <h5 class="card-title">Explore</h5>
     <p class="card-text">Search through <?php echo $internships_count; ?> available internships.</p>
     <a href="search.php?q=" class="btn btn-primary">Show All</a>
   </div>
 </div>
-
- 
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Post Internship</h5>
+    <p class="card-text">Post an internship opportunity for interns to apply online.</p>
+    <a href="post_internship.php" class="btn btn-primary">Go There</a>
+  </div>
+</div>
  <?php require_once("footer.php"); ?>
