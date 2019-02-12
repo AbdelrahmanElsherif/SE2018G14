@@ -23,9 +23,11 @@ else
 	<thead>
       <th>Position</th>
       <th>Company</th>
+      <th>Field</th>
       <th>City</th>
       <th>Period</th>
-      <th>Field</th>
+      <th>Type</th>
+      <th>Academic Year</th>
       <th>Description</th>
 	  </thead>
 	  <tbody>
