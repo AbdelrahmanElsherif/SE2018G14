@@ -57,6 +57,7 @@ require_once("header.php");
    generateInput("Mobile");
    generateInput("CV File", "file");
    ?>
+   <input type="hidden" name="internship_id" value="<?php echo $internship['id']; ?>"></input>
    <input type="submit" class="btn btn-primary" value="Apply"></input>
  </form>
 
