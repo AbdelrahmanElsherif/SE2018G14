@@ -9,6 +9,16 @@ if($_POST)
   }
 
 }
-$stmt = mysql_select("application","AND",array("internship_id"=> $_GET['id'], "status" => "-1"), "=", "id,user_id,mobile");
-
- ?>
+$internship = false;
+if (isset($_GET['internship_id']))
+$internship = getInternship($_GET['internship_id'], $_SESSION['user']['id'])
+if ($internship)
+{
+	$stmt = mysql_select("application","AND",array("internship_id"=> intval($_GET['internship_id']), "status" => "-1"), "=", "id,user_id,mobile");
+}
+else
+{
+	header("Location: manage.php");
+	exit();
+}
+?>

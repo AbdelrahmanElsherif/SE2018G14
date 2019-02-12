@@ -3,9 +3,9 @@ function getUser($id)
 {
 	return mysql_select("user", "", array("id" => $id));
 }
-function getInternship($id)
+function getInternship($id, $user_id = false)
 {
-	return mysql_select("internship", "", array("id" => intval($id)))->fetch();
+	return $user_id? mysql_select("internship", "AND", array("id" => intval($id), "user_id" => intval($user_id)))->fetch() : mysql_select("internship", "", array("id" => intval($id)))->fetch();
 }
 function getApplication($internship_id, $user_id)
 {

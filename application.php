@@ -1,7 +1,7 @@
 <?php include ('common.php');
 $css = array("css/style.css");
 require_once("header.php");
-require_once("functions.php");
+require_once("backend/functions.php");
 ?>
   <table class="table">
     <thead>
