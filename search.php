@@ -38,7 +38,7 @@ else
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row, "<a href='apply.php?internship_id=".$id."'>Apply</a>"); //TODO: check if user has application on that internship before showing Apply button
+        generateRow($row, array("<a href='apply.php?internship_id=".$id."'>Apply</a>")); //TODO: check if user has application on that internship before showing Apply button
        }
 	  ?>
 	  </tbody>
