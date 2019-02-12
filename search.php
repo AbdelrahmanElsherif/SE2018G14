@@ -35,6 +35,7 @@ else
 	  while ($row = $stmt -> fetch()){
 		  unset($row['id']);
 		  unset($row['user_id']);
+		  $row['description'] = nl2br($row['description']);
         generateRow($row);
        }
 	  ?>
