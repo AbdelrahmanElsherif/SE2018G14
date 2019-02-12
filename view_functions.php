@@ -1,6 +1,7 @@
 <?php
-function showSearch($stmt, $link = "apply", $text = $link)
+function showSearch($stmt, $link = "apply", $text = "")
 {
+	if (!$text) $text = $link;
 	echo '
 	    <table class="table">
 	<thead>
