@@ -12,7 +12,9 @@ if ($_POST)
 	{
 		$mobile = $_POST['mobile'];
 		$internship_id = $_POST['internship_id'];
-		if (!getApplication($internship_id, $_SESSION['user']['id']))
+		$application = getApplication($internship_id, $_SESSION['user']['id']);
+		print_r($application);
+		if (!$application)
 		{
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
