@@ -14,7 +14,7 @@ function getInternship($id, $user_id = false)
 }
 function getApplication($internship_id, $user_id = false)
 {
-	return $user_id? mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch() : mysql_select("application", "AND", "internship_id" => intval($internship_id))->fetch();
+	return $user_id? mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch() : mysql_select("application", "AND", array("internship_id" => intval($internship_id)))->fetch();
 }
 function getName($name)
 {
