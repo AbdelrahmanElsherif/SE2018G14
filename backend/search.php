@@ -8,7 +8,8 @@ $academic_years = getConstant("academic_years");
 
 if (isset($_GET['q']))
 {
-	$errors = checkRequiredFields($required_fields, $_GET);
+	$errors = array();
+	//$errors = checkRequiredFields($required_fields, $_GET);
 	if (!$errors)
 	{
 		$field = checkExists($_GET['field'], $fields);
