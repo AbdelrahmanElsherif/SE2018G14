@@ -1,56 +1,35 @@
-<?php error_reporting(0); ?>
+<?php 
+$fields = getConstant("fields");
+$cities = getConstant("cities");
+$periods = getConstant("periods");
+$types = getConstant("types");
+$academic_years = getConstant("academic_years");
 
-     <?php
+if ($_POST && isset($_POST['q']) && $_POST['q'])
+{
+	$errors = checkRequiredFields($required_fields, $_POST);
+	if (!$errors)
+	{
+		$field = checkExists($_POST['field'], $fields);
+		$city = checkExists($_POST['city'], $cities);
+		$period = checkExists($_POST['period'], $periods);
+		$type = checkExists($_POST['type'], $types);
+		$academic_year = checkExists($_POST['academic_year'], $academic_years);
+		$params = array("q" => htmlentities(strip_tags($_POST['q'])));
+		
+		if ($field) $params['field'] = $field;
+		if ($city) $params['city'] = $city;
+		if ($period) $params['period'] = $period;
+		if ($type) $params['type'] = $type;
+		if ($academic_year) $params['academic_year'] = $academic_year;
 
-    session_start();
-    $search_bar ="";
-    $period = "";
-    $type = "";
-    $field = "";
-    $city= "";
-    $academic_year = "";
-    $errors = array();
+		$stmt = mysql_select("internship", "AND" , $params);
 
-    // try {
-    //     $db = new PDO ("mysql:host=localhost;dbname=register", "root", "");
-    // 
-    //     echo "connected";
-    // 
-    // }
-    //     catch(PDOException $e) {
-    //         echo "error" .$e->getMessage();
-    //     }
-
-
-      if (isset($_POST['searchbtn'])) {
-        $search_bar = $_POST['searchBar'];
-        $period = $_POST['period'];
-        $type = $_POST['type'];
-        $field = $_POST['field'];
-        $city= $_POST['city'];
-        $academic_year= $_POST['Academic_Year'];
-      // Empty Search Bar
-      // if (empty($search_bar)){
-      //     array_push($errors, "Invalid Search");
-      //
-      //
-      // }
-
-
-       $stmt = mysql_select("internship", "AND" , array(
-         "$academic_Year" => "academic_year",
-          "$period"=>"period",
-          "$type"=>"type",
-          "$field" => "field",
-          "$city" => "city",
-          "$title" => "search_bar"
-
-       ));
-
-       while ($row = $stmt -> fetchAll()){
+       while ($row = $stmt -> fetch()){
          foreach ($rows as $row) {
         
          }
        }
+	}
 }
     ?>

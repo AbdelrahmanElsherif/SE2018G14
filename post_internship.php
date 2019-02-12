@@ -1,9 +1,9 @@
-<?php include ('common.php');
+<?php
 $css = array("css/style.css");
-<?php require_once('header.php'); 
+require_once('header.php'); 
 ?>
 
-  <div class="content container">
+<div class="content container">
 <h2>Post Internship</h2>
 <?php require_once("errors.php"); ?>
 <form method='POST'>

@@ -1,29 +1,16 @@
 <?php
+require_once("functions.php");
 $required_fields = array("title", "company", "field", "city", "period", "type", "academic_year", "role", "description");
 
-function getName($name)
-{
-	return str_replace("_", " ", $name);
-}
 $fields = getConstant("fields");
 $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
 $academic_years = getConstant("academic_years");
-function checkExists($key, $array)
-{
-	if (isset($array[$key])) return $array[$key];
-	return false;
-}
-function sanitizeField($value)
-{
-	return htmlentities(strip_tags($value));
-}
+
 if ($_POST)
 {
-	$errors = array();
-	foreach ($required_fields as $field) { if (!isset($_POST[$field]) || (empty($_POST[$field]) && $_POST[$field] !== "0")) { $errors[] = "'".ucfirst(getName($field))	."' is a required field, but it was left blank.";} } 
-	
+	$errors = checkRequiredFields($required_fields);
 	if (!$errors)
 	{
 		$field = checkExists($_POST['field'], $fields);
