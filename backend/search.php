@@ -15,7 +15,8 @@ if ($_POST && isset($_POST['q']) && $_POST['q'])
 		$period = checkExists($_POST['period'], $periods);
 		$type = checkExists($_POST['type'], $types);
 		$academic_year = checkExists($_POST['academic_year'], $academic_years);
-		$params = array("q" => htmlentities(strip_tags($_POST['q'])));
+		$params = array("role" => htmlentities(strip_tags("%".$_POST['q']."%")),
+		"company" => htmlentities(strip_tags("%".$_POST['q']."%")));
 		
 		if ($field) $params['field'] = $field;
 		if ($city) $params['city'] = $city;
@@ -23,7 +24,7 @@ if ($_POST && isset($_POST['q']) && $_POST['q'])
 		if ($type) $params['type'] = $type;
 		if ($academic_year) $params['academic_year'] = $academic_year;
 
-		$stmt = mysql_select("internship", "AND" , $params);
+		$stmt = mysql_select("internship", "AND" , $params, "LIKE");
 
        while ($row = $stmt -> fetch()){
          foreach ($rows as $row) {
