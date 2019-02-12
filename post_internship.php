@@ -5,7 +5,7 @@ require_once('header.php');
 <h2>Post Internship</h2>
 <?php require_once("errors.php"); ?>
 <form method='POST'>
-<?php generateInput("Title"); generateInput("Company");  generateSelect("Field", $fields); generateSelect("City", $cities);
+<?php  generateInput("Company");  generateSelect("Field", $fields); generateSelect("City", $cities);
 generateSelect("Period", $periods); generateSelect("Type", $types);
 generateSelect("Academic Year", $academic_years);
 generateInput("Role", "text");
