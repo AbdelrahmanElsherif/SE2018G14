@@ -28,10 +28,8 @@ else
       <th>Period</th>
 	  
 	  <?php
-	         while ($row = $stmt -> fetch()){
-         foreach ($rows as $row) {
+	  while ($row = $stmt -> fetch()){
         generateRow($row);
-         }
        }
 	  ?>
     </table>
