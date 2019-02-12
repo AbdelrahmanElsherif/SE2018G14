@@ -30,7 +30,7 @@ if (isset($_GET['q']))
 		if ($type) $params['type'] = $type;
 		if ($academic_year) $params['academic_year'] = $academic_year;
 		
-		$stmt = mysql_select("internship", "AND" , $params, "LIKE");
+		$stmt = mysql_select("internship", "AND" , $params, " LIKE ");
 	}
 }
 ?>
