@@ -20,7 +20,7 @@ function showSearch($stmt, $apply = false)
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row, $apply? array("<a href='apply.php?internship_id=".$id."'>Apply</a>") : false); //TODO: check if user has application on that internship before showing Apply button
+        generateRow($row, $apply? array("<a href='apply.php?internship_id=".$id."'>Apply</a>") : array()); //TODO: check if user has application on that internship before showing Apply button
        }
 	 echo '</tbody></table>';
 }
