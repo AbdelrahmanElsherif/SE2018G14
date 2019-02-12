@@ -52,7 +52,7 @@ require_once("header.php");
 <div class="content container">
  <h3 class="text-center">Application for:</h3>
  <form method="POST">
-   <?php include ('errors.php')
+   <?php include ('errors.php');
    generateInput("Mobile");
    generateInput("CV", "file");
    
