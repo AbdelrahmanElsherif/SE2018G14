@@ -3,6 +3,12 @@ function getId($name)
 {
 	return str_replace(" ", "_", strtolower($name));
 }
+function generateRow($params)
+{
+	echo "<tr>";
+	foreach ($params as $param => $value) echo "<td>".$value."</td>";
+	echo "</tr>";
+}
 function generateInput($name, $type = "text")
 {
 $id = getId($name);

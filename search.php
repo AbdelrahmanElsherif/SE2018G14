@@ -1,7 +1,9 @@
 <?php
 require_once("header.php");
+if (!isset($_GET['q']))
+{
 ?>
-<form action="search_result.php" method="get">
+<form method="get">
       <?php include ('errors.php') ?>
       <input type="text" name="q" placeholder="Search..." class="form-control" value="" maxlength="25" autocomplete="off" onmousedown="" onblur=""/></br>
 	  <h2>Advanced Filtering (optional):</h2>
@@ -12,5 +14,28 @@ generateSelect("Academic Year", $academic_years);?>
 <input type="submit" class="btn btn-primary" value="Search"/>
     </form>
  <?php
+}
+else
+{
+	?>
+	<h2>Search Results</h2>
+    <table>
+      <th>Company</th>
+      <th>Field</th>
+      <th>Position</th>
+      <th>Description</th>
+      <th>City</th>
+      <th>Period</th>
+	  
+	  <?php
+	         while ($row = $stmt -> fetch()){
+         foreach ($rows as $row) {
+        generateRow($row);
+         }
+       }
+	  ?>
+    </table>
+	<?php
+}
  require_once("footer.php");
 ?>
