@@ -29,14 +29,16 @@ else
       <th>Type</th>
       <th>Academic Year</th>
       <th>Description</th>
+      <th></th>
 	  </thead>
 	  <tbody>
 	  <?php
 	  while ($row = $stmt -> fetch()){
+		  $id = $row['id'];
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row);
+        generateRow($row, "<a href='apply.php?internship_id=".$id."'>Apply</a>"); //TODO: check if user has application on that internship before showing Apply button
        }
 	  ?>
 	  </tbody>
