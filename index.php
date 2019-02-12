@@ -14,7 +14,7 @@
   </div>
 </div>
 </div>
-<div class="col-md-4">
+<div class="col-md-3">
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Post Internship</h5>
@@ -24,4 +24,9 @@
 </div>
 </div>
 </div>
- <?php require_once('footer.php'); ?>
+<?php require_once('common.php');
+requiresAuthentication();
+$css = array("css/main.css");
+require_once('footer.php');
+require_once("view_fu
+nctions.php");
