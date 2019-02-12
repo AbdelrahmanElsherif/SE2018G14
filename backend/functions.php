@@ -1,7 +1,7 @@
 <?php
 function getUser($id)
 {
-	return mysql_select("user", "", array("id" => $id));
+	return mysql_select("user", "", array("id" => $id))->fetch();
 }
 function getInternship($id, $user_id = false)
 {
