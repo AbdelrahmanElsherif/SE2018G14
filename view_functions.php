@@ -1,5 +1,5 @@
 <?php
-function showSearch($stmt, $apply = false)
+function showSearch($stmt, $link = "apply", $text = $link)
 {
 	echo '
 	    <table class="table">
@@ -20,7 +20,7 @@ function showSearch($stmt, $apply = false)
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row, $apply? array("<a href='apply.php?internship_id=".$id."'>Apply</a>") : array()); //TODO: check if user has application on that internship before showing Apply button
+        generateRow($row, array("<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>")); //TODO: check if user has application on that internship before showing Apply button
        }
 	 echo '</tbody></table>';
 }
