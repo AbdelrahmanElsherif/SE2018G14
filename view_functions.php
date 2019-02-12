@@ -1,4 +1,29 @@
 <?php
+function showSearch($stmt)
+{
+	echo '
+	    <table class="table">
+	<thead>
+      <th>Position</th>
+      <th>Company</th>
+      <th>Field</th>
+      <th>City</th>
+      <th>Period</th>
+      <th>Type</th>
+      <th>Academic Year</th>
+      <th>Description</th>
+      <th></th>
+	  </thead>
+	  <tbody>';
+	  while ($row = $stmt -> fetch()){
+		  $id = $row['id'];
+		  unset($row['id']);
+		  unset($row['user_id']);
+		  $row['description'] = nl2br($row['description']);
+        generateRow($row, array("<a href='apply.php?internship_id=".$id."'>Apply</a>")); //TODO: check if user has application on that internship before showing Apply button
+       }
+	 echo '</tbody></table>';
+}
 function getId($name)
 {
 	return str_replace(" ", "_", strtolower($name));
