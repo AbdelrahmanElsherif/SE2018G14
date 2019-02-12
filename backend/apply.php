@@ -16,12 +16,11 @@ if ($_POST)
 		{
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
-				$path_temp = $_FILES['cv_file']['tmp_name'];
 				mysql_insert("application", array(
 					"user_id" => $_SESSION['user']['id'],
 					"internship_id" => $internship_id,
 					"mobile" => $mobile,
-					"cv" => file_get_contents($path_temp)
+					"cv" => file_get_contents($_FILES['cv_file']['tmp_name'])
 				));
 			}
 			else 
