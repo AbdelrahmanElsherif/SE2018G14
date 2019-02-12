@@ -4,8 +4,8 @@ require_once("header.php");
 ?>
 
 
+<!--
 <style>
-
  body { background-image: url(slide_one.jpg) ;background-repeat:no-repeat;background-position: 50% 22% ;  background-size: 100%; }
 
  .container {
@@ -47,10 +47,11 @@ require_once("header.php");
    margin-left: 50%;
  }
   </style>
+  -->
  </br>
 </br>
 <div class="content container">
- <h3 class="text-center">Application for:</h3>
+ <h3 class="text-center">Application for: <?php $internship['role']; ?></h3>
  <form method="POST">
    <?php include ('errors.php');
    generateInput("Mobile");
@@ -58,6 +59,7 @@ require_once("header.php");
    
    
    ?>
+   <input type="submit" class="btn btn-primary" 
  </form>
 
 </div>
