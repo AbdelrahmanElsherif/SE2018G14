@@ -14,7 +14,7 @@ require_once("header.php");
 	<tbody>
     <?php 
     foreach ($applications as $application) {
-		unset($application['cv']);
+		$application['user_id'] = getUser($application['user_id'])['name'];
       generateRow($application);
     }
 ?>   

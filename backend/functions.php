@@ -1,4 +1,8 @@
 <?php
+function getUser($id)
+{
+	return mysql_select("user", "", array("id" => $id));
+}
 function getInternship($id)
 {
 	return mysql_select("internship", "", array("id" => intval($id)))->fetch();
