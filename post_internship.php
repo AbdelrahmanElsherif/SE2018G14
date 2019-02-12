@@ -13,6 +13,7 @@ generateInput("Description", "textarea");
 ?>
 <div class="text-center">
 <input type='submit' class="btn btn-primary" value='Publish'></input>
+  <p></br></p>
 </div>
 </form>
 <?php require_once("footer.php"); ?>
