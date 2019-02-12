@@ -1,18 +1,23 @@
 <?php include ('common.php');
 $css = array("css/style.css");
 require_once("header.php");
-echo "<h1>$title</h1>"; ?>
-  <table>
-    <tr>
-      <th>List of applications</th> <th>Accepted</th> <th>Rejected</th>
-    </tr>
+?>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+	  <th>Name</th>
+	  <th>Mobile</th>
+	  <th>CV</th>
+	  <th></th>
+	  
+    </thead>
+	<tbody>
     <?php 
     foreach ($applications as $application) {
-      
-      echo "<tr>
-        <td>".$application['mobile']." <input type='submit' name='' value='Accept'> <input type='submit' name='' value='Reject'></td>
-      </tr>";
+		unset($application['cv']);
+      generateRow($application);
     }
 ?>   
+	</tbody>
   </table>
 <?php require_once("footer.php"); ?>
