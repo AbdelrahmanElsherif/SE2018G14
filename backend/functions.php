@@ -5,7 +5,7 @@ function getInternship($id)
 }
 function getApplication($internship_id, $user_id)
 {
-	return mysql_select("application", "", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch();
+	return mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch();
 }
 function getName($name)
 {
