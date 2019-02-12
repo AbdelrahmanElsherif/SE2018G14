@@ -1,6 +1,7 @@
 <?php include ('common.php');
 $css = array("css/style.css");
 require_once("header.php");
+require_once("functions.php");
 ?>
   <table class="table">
     <thead>
@@ -13,7 +14,7 @@ require_once("header.php");
     </thead>
 	<tbody>
     <?php 
-    foreach ($applications as $application) {
+    while ($row = $stmt->fetch()) {
 		$application['user_id'] = getUser($application['user_id'])['name'];
       generateRow($application);
     }
