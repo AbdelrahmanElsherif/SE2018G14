@@ -2,8 +2,7 @@
 requiresAuthentication();
 $css = array("css/main.css");
 require_once("global_footer.php");
-require_once("view_fu
-nctions.php");
+require_once("view_functions.php");
 ?>
 <style>
 .footer {
