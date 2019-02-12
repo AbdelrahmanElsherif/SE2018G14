@@ -19,6 +19,7 @@ else
 {
 	?>
 	<h2>Search Results</h2>
+</br>
 	<?php
 	showSearch($stmt);
 }
