@@ -70,5 +70,5 @@ require_once("view_functions.php");
 <a href="#" class="fa fa-google"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#" class="fa fa-linkedin"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#" class="fa fa-youtube"></a>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#" class="fa fa-instagram"></a> </p>  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" class="fa fa-instagram"></a> </p>  
 </div>
