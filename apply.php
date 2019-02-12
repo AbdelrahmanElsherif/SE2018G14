@@ -51,13 +51,11 @@ require_once("header.php");
  </br>
 </br>
 <div class="content container">
- <h3 class="text-center">Application for: <?php $internship['role']; ?></h3>
+ <h3 class="text-center">Application for: <?php echo $internship['role']; ?></h3>
  <form method="POST">
    <?php include ('errors.php');
    generateInput("Mobile");
    generateInput("CV", "file");
-   
-   
    ?>
    <input type="submit" class="btn btn-primary" 
  </form>
