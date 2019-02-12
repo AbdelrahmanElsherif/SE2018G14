@@ -31,6 +31,7 @@ $id = getId($name);
 <div class="form-group">
     <label for="<?php echo $id; ?>"><?php echo ucfirst($name); ?></label>
     <select class="form-control" id="<?php echo $id; ?>" name="<?php echo $id; ?>">
+	<option value="-">-- Not Specified --</option>
 	<?php foreach ($array as $key => $item){
 		echo "<option value='".$key."'>".$item."</option>";
 	}  ?>
