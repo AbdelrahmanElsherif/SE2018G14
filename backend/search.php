@@ -12,11 +12,11 @@ if (isset($_GET['q']))
 	//$errors = checkRequiredFields($required_fields, $_GET);
 	if (!$errors)
 	{
-		$field = checkExists($_GET['field'], $fields);
-		$city = checkExists($_GET['city'], $cities);
-		$period = checkExists($_GET['period'], $periods);
-		$type = checkExists($_GET['type'], $types);
-		$academic_year = checkExists($_GET['academic_year'], $academic_years);
+		if (isset($_GET['field'])) $field = checkExists($_GET['field'], $fields);
+		if (isset($_GET['city'])) $city = checkExists($_GET['city'], $cities);
+		if (isset($_GET['period'])) $period = checkExists($_GET['period'], $periods);
+		if (isset($_GET['type'])) $type = checkExists($_GET['type'], $types);
+		if (isset($_GET['academic_year'])) $academic_year = checkExists($_GET['academic_year'], $academic_years);
 		$params = array();
 		if ($_GET['q'])
 		{
