@@ -12,6 +12,10 @@ function getInternship($id, $user_id = false)
 {
 	return $user_id? mysql_select("internship", "AND", array("id" => intval($id), "user_id" => intval($user_id)))->fetch() : mysql_select("internship", "", array("id" => intval($id)))->fetch();
 }
+function getApplicationById($id)
+{
+	return mysql_select("application", "AND", array("id" => intval($id)))->fetch();
+}
 function getApplication($internship_id, $user_id = false)
 {
 	return $user_id? mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch() : mysql_select("application", "AND", array("internship_id" => intval($internship_id)))->fetch();

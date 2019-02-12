@@ -3,7 +3,7 @@ requiresAuthentication();
 require_once("functions.php");
 if (isset($_GET['id']) && $_GET['id'])
 {
-	$application = getApplication($_GET['id']);
+	$application = getApplicationById($_GET['id']);
 	print_r($application);
 	exit();
 	if ($application)
