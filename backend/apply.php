@@ -2,7 +2,10 @@
 require_once("functions.php");
 $internship = false;
 if (isset($_GET['internship_id']) && $_GET['internship_id']) $internship = getInternship($_GET['internship_id']);
-if (!$internship) header("Location: search.php");
+if (!$internship) { header("Location: search.php"); exit; }
+
+$application = getApplication($internship_id, $_SESSION['user']['id']);
+if ($application) $errors[] = "You have already applied for this position";
 
 $required_fields = array("mobile", "internship_id");
 if ($_POST)
@@ -12,9 +15,6 @@ if ($_POST)
 	{
 		$mobile = $_POST['mobile'];
 		$internship_id = $_POST['internship_id'];
-		$application = getApplication($internship_id, $_SESSION['user']['id']);
-		if (!$application)
-		{
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
 				mysql_insert("application", array(
@@ -28,11 +28,6 @@ if ($_POST)
 			{
 				$errors[] = "The CV file was left blank.";
 			}
-		}
-		else
-		{
-			$errors[] = "You have already applied for this internship.";
-		}
 	}
 
 }
