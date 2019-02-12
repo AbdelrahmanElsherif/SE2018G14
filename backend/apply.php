@@ -14,6 +14,7 @@ if ($_POST)
 		$internship_id = $_POST['internship_id'];
 		if (!getApplication($internship_id, $_SESSION['user']['id']))
 		{
+			print_r($_FILES);
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
 				mysql_insert("application", array(
