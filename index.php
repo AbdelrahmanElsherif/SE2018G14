@@ -28,5 +28,4 @@
 requiresAuthentication();
 $css = array("css/main.css");
 require_once('footer.php');
-require_once("view_fu
-nctions.php");
+require_once("view_functions.php");
