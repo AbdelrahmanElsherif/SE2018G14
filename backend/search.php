@@ -1,4 +1,5 @@
 <?php 
+require_once("functions.php");
 $fields = getConstant("fields");
 $cities = getConstant("cities");
 $periods = getConstant("periods");
@@ -15,11 +16,12 @@ if (isset($_GET['q']))
 		$period = checkExists($_GET['period'], $periods);
 		$type = checkExists($_GET['type'], $types);
 		$academic_year = checkExists($_GET['academic_year'], $academic_years);
+		$params = array();
 		if ($_GET['q'])
 		{
-		$params = array("role" => htmlentities(strip_tags("%".$_GET['q']."%")),
-		"company" => htmlentities(strip_tags("%".$_GET['q']."%")),
-		"description" => htmlentities(strip_tags("%".$_GET['q']."%")));
+			$params['role'] = htmlentities(strip_tags("%".$_GET['q']."%"));
+			$params['company'] = htmlentities(strip_tags("%".$_GET['q']."%"));
+			$params['description'] = htmlentities(strip_tags("%".$_GET['q']."%"));
 		}
 		if ($field) $params['field'] = $field;
 		if ($city) $params['city'] = $city;
@@ -28,7 +30,6 @@ if (isset($_GET['q']))
 		if ($academic_year) $params['academic_year'] = $academic_year;
 		
 		$stmt = mysql_select("internship", "AND" , $params, "LIKE");
-		
 	}
 }
 ?>
