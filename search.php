@@ -20,7 +20,7 @@ else
 	?>
 	<h2>Search Results</h2>
 	<?php
-	showSearch($stmt);
+	showSearch($stmt, true);
 }
  require_once("footer.php");
 ?>
