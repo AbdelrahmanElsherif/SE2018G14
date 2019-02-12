@@ -9,6 +9,6 @@ if($_POST)
   }
 
 }
-$stmt = mysql_select("application","AND",array("internship_id"=>$id, "status" => "-1"), "=", "id,user_id,mobile");
+$stmt = mysql_select("application","AND",array("internship_id"=> $_GET['id'], "status" => "-1"), "=", "id,user_id,mobile");
 
  ?>
