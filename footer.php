@@ -1,10 +1,4 @@
-<?php require_once('common.php');
-requiresAuthentication();
-$css = array("css/main.css");
-require_once("global_footer.php");
-require_once("view_fu
-nctions.php");
-?>
+<?php require_once("global_footer.php"); ?>
 <style>
 .footer {
  position: fixed;
