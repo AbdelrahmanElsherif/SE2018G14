@@ -14,6 +14,8 @@ if ($_POST)
 		$mobile = $_POST['mobile'];
 		$internship_id = $_POST['internship_id'];
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
+		if (!$application)
+		{
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
 				mysql_insert("application", array(
@@ -27,6 +29,11 @@ if ($_POST)
 			{
 				$errors[] = "The CV file was left blank.";
 			}
+		}
+		else
+		{
+			$errors[] = "You have already applied for this position";
+		}
 	}
 
 }
