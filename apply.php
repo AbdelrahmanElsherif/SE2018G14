@@ -50,18 +50,14 @@ require_once("header.php");
  </br>
 </br>
 <div class="content container">
- <h3  style="text-align:center;">Application for:</h3>
- <form action="#">
-   <?php include ('errors.php') ?>
-       <div class="container">
-         <label for="mobileno"><b>Mobile no.:</b></label>
-         <input type="text" placeholder="Enter phone no." name="uname"   required >
-
-</br> </br>
-         <label for="CV"><b>CV : </b></label>
-         <input type="file" placeholder="please attach your CV.." name="CV" required>
-         <button type="submit" class="submitbtn" >submit</button>
-       </div>
+ <h3 class="text-center">Application for:</h3>
+ <form method="POST">
+   <?php include ('errors.php')
+   generateInput("Mobile");
+   generateInput("CV", "file");
+   
+   
+   ?>
  </form>
 
 </div>
