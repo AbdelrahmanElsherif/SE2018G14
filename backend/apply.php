@@ -39,7 +39,7 @@ if ($_POST)
 }
 else if (isset($_GET['internship_id']) && $_GET['internship_id'])
 {
-	$application = getApplication(isset($_GET['internship_id'], $_SESSION['user']['id']);
+	$application = getApplication($_GET['internship_id'], $_SESSION['user']['id']);
 	if ($application) $errors[] = "You have already applied for this position";
 }
 ?>
