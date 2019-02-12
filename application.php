@@ -16,7 +16,7 @@ require_once("backend/functions.php");
     <?php 
     while ($row = $stmt->fetch()) {
 		$row['user_id'] = getUser($row['user_id'])['name'];
-      generateRow($row);
+      generateRow($row, "<a href='download.php?id=".$row['id']."'>Download CV</a>");
     }
 ?>   
 	</tbody>
