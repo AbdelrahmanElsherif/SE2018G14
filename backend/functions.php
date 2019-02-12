@@ -1,4 +1,12 @@
 <?php
+function getInternship($id)
+{
+	return mysql_select("internship", "", array("id" => intval($id)))->fetch();
+}
+function getApplication($internship_id, $user_id)
+{
+	return mysql_select("application", "", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch();
+}
 function getName($name)
 {
 	return str_replace("_", " ", $name);
