@@ -42,3 +42,4 @@ require_once("view_functions.php");
 </nav>
 </header>
 </div>
+<div class="content container">

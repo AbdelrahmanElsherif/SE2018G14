@@ -2,8 +2,6 @@
 $css = array("css/style.css");
 require_once('header.php'); 
 ?>
-
-<div class="content container">
 <h2>Post Internship</h2>
 <?php require_once("errors.php"); ?>
 <form method='POST'>
@@ -17,5 +15,4 @@ generateInput("Description", "textarea");
 <input type='submit' class="btn btn-primary" value='Publish'></input>
 </div>
 </form>
-</div>
 <?php require_once("footer.php"); ?>
