@@ -23,7 +23,7 @@ function sanitizeField($value)
 function checkRequiredFields($required_fields, $data)
 {
 	$errors = array();
-	foreach ($required_fields as $field) { if (!isset($data[$field]) || (empty($data[$field]) && $data[$field] !== "0")) { $errors[] = "'".ucfirst(getName($field))	."' is a required field, but it was left blank.";} } 
+	foreach ($required_fields as $field) { if (!isset($data[$field]) || (empty($data[$field]) && $data[$field] !== "0") || $data[$field] == "-") { $errors[] = "'".ucfirst(getName($field))	."' is a required field, but it was left blank.";} } 
 	return $errors;
 }
 ?>
