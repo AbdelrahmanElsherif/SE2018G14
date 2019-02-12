@@ -52,7 +52,7 @@ require_once("header.php");
 </br>
 <div class="content container">
  <h3 class="text-center">Application for: <?php echo $internship['role']; ?></h3>
- <form method="POST">
+ <form method="POST" enctype="multipart/form-data">
    <?php include ('errors.php');
    generateInput("Mobile");
    generateInput("CV File", "file");
