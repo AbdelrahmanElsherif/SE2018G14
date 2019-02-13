@@ -15,28 +15,35 @@ if ($_POST)
 		$internship_id = $_POST['internship_id'];
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
-		{	
-			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
+		{
+			if (hasAccess($internship_id, $_SESSION['user']['id']))
 			{
-				$temp_path = $_FILES['cv_file']['tmp_name'];
-				$finfo = finfo_open(FILEINFO_MIME_TYPE);
-				if (finfo_file($finfo, $temp_path) == "application/pdf")
+				if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 				{
-					mysql_insert("application", array(
-						"user_id" => $_SESSION['user']['id'],
-						"internship_id" => $internship_id,
-						"mobile" => $mobile,
-						"cv" => file_get_contents($temp_path)
-					));
+					$temp_path = $_FILES['cv_file']['tmp_name'];
+					$finfo = finfo_open(FILEINFO_MIME_TYPE);
+					if (finfo_file($finfo, $temp_path) == "application/pdf")
+					{
+						mysql_insert("application", array(
+							"user_id" => $_SESSION['user']['id'],
+							"internship_id" => $internship_id,
+							"mobile" => $mobile,
+							"cv" => file_get_contents($temp_path)
+						));
+					}
+					else
+					{
+						$errors[] = "Your CV has to be a valid PDF file. Please try again.";
+					}
 				}
-				else
+				else 
 				{
-					$errors[] = "Your CV has to be a valid PDF file. Please try again.";
+					$errors[] = "The CV file was left blank.";
 				}
 			}
-			else 
+			else
 			{
-				$errors[] = "The CV file was left blank.";
+				$errors[] = "You cannot apply to a position you posted.";
 			}
 		}
 		else
@@ -50,5 +57,6 @@ else if (isset($_GET['internship_id']) && $_GET['internship_id'])
 {
 	$application = getApplication($_GET['internship_id'], $_SESSION['user']['id']);
 	if ($application) $errors[] = "You have already applied for this position";
+	if (hasAccess($_GET['internship_id'], $_SESSION['user']['id'])) $errors[] = "You cannot apply to a position you posted.";
 }
 ?>
