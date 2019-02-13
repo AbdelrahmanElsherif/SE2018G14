@@ -11,7 +11,7 @@ function login($email, $password)
 	}
 	return false;
 }
-if(isset($_POST['login'])){
+if(isset($_POST['email']) && isset($_POST['password'])){
   $email = $_POST['email'];
   $password = $_POST['password'];
   $errors = array();
