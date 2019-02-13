@@ -24,7 +24,9 @@ function showSearch($stmt, $link = "apply", $text = "")
 		  unset($row['internship_id']);
 		  unset($row['cv']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row, ($link && !getApplication($id, $_SESSION['user']['id'], "id") && !hasAccess($id, $_SESSION['user']['id']))? array("<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>") : array("-"));
+		  if ($link == "apply" && getApplication($id, $_SESSION['user']['id'], "id") && hasAccess($id, $_SESSION['user']['id']) { $row[] = "-"; }
+		  else { $row[] = "<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>"; }
+        generateRow($row);
        }
 	 echo '</tbody></table>';
 }
