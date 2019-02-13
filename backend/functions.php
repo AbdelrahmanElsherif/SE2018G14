@@ -1,4 +1,11 @@
 <?php
+function loopThrough($rows, $key, &$array)
+{
+	foreach ($rows as $row)
+	{
+		$array[] = $row[$key];
+	}
+}
 function hasAccess($id, $user_id)
 {
 	$internship = getInternship($id)['user_id'];

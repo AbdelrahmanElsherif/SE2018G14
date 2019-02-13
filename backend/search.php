@@ -5,8 +5,10 @@ $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
 $academic_years = getConstant("academic_years");
-$companies = dosql("SELECT DISTINCT company FROM internship")->fetchAll();
-$roles = dosql("SELECT DISTINCT role FROM internship")->fetchAll();
+$companies = array();
+$roles = array();
+loopThrough(dosql("SELECT DISTINCT company FROM internship")->fetchAll(), "company", $companies);
+loopThrough(dosql("SELECT DISTINCT role FROM internship")->fetchAll(), "role", $roles);
 if (isset($_GET['q']) && $_GET['s'] == 1)
 {
 	$errors = array();
