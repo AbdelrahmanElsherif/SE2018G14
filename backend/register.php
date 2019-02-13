@@ -14,7 +14,7 @@ function register($username, $email, $password)
 	return false;	
 }
 
-if (isset($_POST['register'])) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password1']) && isset($_POST['password2'])) {
   $username = $_POST['username'];
   $email = $_POST['email'];
   $Password1 = $_POST['password1'];
