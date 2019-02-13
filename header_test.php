@@ -27,20 +27,15 @@ require_once("view_functions.php");
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="search.php">Explore</a></li>
           <li><a href="post_internship.php">Post Internship</a></li>
-          <li><a href="application.php">Manage Applications</a></li>          
-          <!-- <li><a href="">Contact</a></li> -->
-        </ul>
-        <ul class="pull-right navbar-nav"><li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a href="application.php">Manage Applications</a></li>
+          <li><a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="profile.php">Profile</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout.php">Logout</a>
-        </div>
-      </li>
-    </ul>
+          <a class="dropdown-item" href="logout.php">Logout</a></li>
+          <!-- <li><a href="">Contact</a></li> -->
+        </ul>
+     
       </nav><!-- #nav-menu-container -->
 
     </div>
