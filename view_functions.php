@@ -19,7 +19,7 @@ function showSearch($stmt, $link = "apply", $text = "")
 	  while ($row = $stmt -> fetch()){
 		  $id = $row['id'];
 		  
-		  if ($link == "apply") { if (getApplication($row['internship_id'], $_SESSION['user']['id']) || hasAccess($row['internship_id'], $_SESSION['user']['id'])) $link = false; } //This will be SQL-intensive; we will use pagination. There might be better practice.
+		  if ($link == "apply") { if (getApplication($row['id'], $_SESSION['user']['id']) || hasAccess($row['id'], $_SESSION['user']['id'])) $link = false; } //This will be SQL-intensive; we will use pagination. There might be better practice.
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  unset($row['internship_id']);
