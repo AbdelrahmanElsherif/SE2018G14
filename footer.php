@@ -5,7 +5,7 @@ require_once("global_footer.php");
 require_once("view_functions.php");
 ?>
 <style>
-a{
+.footer a{
   color: white;
 }
 .footer {
