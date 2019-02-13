@@ -12,7 +12,7 @@ require_once("global_header.php");
                         <input type="text" name="email" class="form-control" placeholder="Username or Email" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" value="" />
+                        <input type="password" name="password" class="form-control" placeholder="Password" value="" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
