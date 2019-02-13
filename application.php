@@ -1,5 +1,4 @@
 <?php include ('common.php');
-$css = array("css/style.css");
 require_once("header.php");
 require_once("backend/functions.php");
 ?>

@@ -14,7 +14,7 @@ if (isset($_GET['internship_id']))
 $internship = getInternship($_GET['internship_id'], $_SESSION['user']['id']);
 if ($internship)
 {
-	$stmt = mysql_select("application","AND",array("internship_id"=> intval($_GET['internship_id']), "status" => "-1"), "=", "id,user_id,mobile");
+	$stmt = mysql_select("application","AND",array("internship_id"=> intval($_GET['internship_id']), "status" => "-1"), "=", "id,user_id,mobile,status");
 }
 else
 {
