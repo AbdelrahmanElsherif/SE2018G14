@@ -1,45 +1,36 @@
 <?php require_once('common.php');
 requiresAuthentication();
-$css = array("css/main.css");
+$css = array("css/header_test.css");
 require_once("global_header.php");
 require_once("view_functions.php");
 ?>
-<div class="content">
-   <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-  <a class="navbar-brand" href="index.php">Intern</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <h1><a href="index.php" class="scrollto">INTERN</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="search.php">Explore</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="post_internship.php">Post Internship</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="application.php">Manage Applications</a>
-      </li>
-    </ul>
-	<ul class="pull-right navbar-nav"><li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="profile.php">Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout.php">Logout</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-</header>
-</div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.php">Home</a></li>
+          <li><a href="search.php">Explore</a></li>
+          <li><a href="post_internship.php">Post Internship</a></li>
+          <li><a href="application.php">Manage Applications</a></li>
+          <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong></a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="profile.php">Profile</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="logout.php">Logout</a>
+                  </div>
+            </li>
+          <!-- <li><a href="">Contact</a></li> -->
+        </ul>
+     
+      </nav><!-- #nav-menu-container -->
+
+    </div>
+  </header><!-- #header -->
 <div class="content container">
