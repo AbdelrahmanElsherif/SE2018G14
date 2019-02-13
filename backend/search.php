@@ -17,7 +17,7 @@ if (isset($_GET['s']) && $_GET['s'] == 1)
 	{
 		$params = array();
 		if (isset($_GET['role']) && checkExists($_GET['role'], $roles)) $params['role'] = checkExists($_GET['role'], $roles);
-		if (isset($_GET['company']) && checkExists($_GET['company'], $companies)) $params['company'] = checkExists($_GET['field'], $fields);
+		if (isset($_GET['company']) && checkExists($_GET['company'], $companies)) $params['company'] = checkExists($_GET['company'], $companies);
 		if (isset($_GET['field']) && checkExists($_GET['field'], $fields)) $params['field'] = checkExists($_GET['field'], $fields);
 		if (isset($_GET['city']) && checkExists($_GET['city'], $cities)) $params['city'] = checkExists($_GET['city'], $cities);
 		if (isset($_GET['period']) && checkExists($_GET['period'], $periods)) $params['period']= checkExists($_GET['period'], $periods);
