@@ -20,6 +20,7 @@ function showSearch($stmt, $link = "apply", $text = "")
 		  $id = $row['id'];
 		  unset($row['id']);
 		  unset($row['user_id']);
+		  unset($row['cv']);
 		  $row['description'] = nl2br($row['description']);
         generateRow($row, array("<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>")); //TODO: check if user has application on that internship before showing Apply button
        }
