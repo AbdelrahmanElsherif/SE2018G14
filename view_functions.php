@@ -18,12 +18,14 @@ function showSearch($stmt, $link = "apply", $text = "")
 	  <tbody>';
 	  while ($row = $stmt -> fetch()){
 		  $id = $row['id'];
+		  
+		  if ($link == "apply") { if (getApplication($row['internship_id'], $_SESSION['user']['id']) || hasAccess($row['internship_id'], $_SESSION['user']['id'])) $link = false; } //This will be SQL-intensive; we will use pagination. There might be better practice.
 		  unset($row['id']);
 		  unset($row['user_id']);
 		  unset($row['internship_id']);
 		  unset($row['cv']);
 		  $row['description'] = nl2br($row['description']);
-        generateRow($row, array("<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>")); //TODO: check if user has application on that internship before showing Apply button
+        generateRow($row, $link? array("<a href='".$link.".php?internship_id=".$id."'>".ucfirst($text)."</a>") : array("-"));
        }
 	 echo '</tbody></table>';
 }
