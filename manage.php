@@ -14,13 +14,13 @@ function processStatus($status)
 }
 
 ?>
-<h1>List of your internships:</h1>
+<h3>List of your internships:</h3>
  <?php
  showSearch($internship_stmt, "application", "Manage");
  
  ?>
- 
-<h1>List of your applications:</h1>
+<br><br>
+<h3>List of your applications:</h3>
  <?php
  	echo '
 	    <table class="table">
