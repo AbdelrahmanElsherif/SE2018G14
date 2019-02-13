@@ -15,10 +15,10 @@ function register($username, $email, $password)
 }
 
 if (isset($_POST['register'])) {
-  $username = $_POST['Username'];
-  $email = $_POST['Email'];
-  $Password1 = $_POST['Password1'];
-  $Password2 = $_POST['Password2'];
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $Password1 = $_POST['password1'];
+  $Password2 = $_POST['password2'];
 
 //ensure fields are filled properly
 
