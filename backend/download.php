@@ -12,7 +12,7 @@ if (isset($_GET['id']) && $_GET['id'])
 			header("Content-Disposition: inline; filename=filename.pdf");
 			echo $application['cv'];
 			exit();
-		}			
+		}
 	}
 	else
 	{

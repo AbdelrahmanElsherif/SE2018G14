@@ -15,15 +15,24 @@ if ($_POST)
 		$internship_id = $_POST['internship_id'];
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
-		{
+		{	
 			if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 			{
-				mysql_insert("application", array(
-					"user_id" => $_SESSION['user']['id'],
-					"internship_id" => $internship_id,
-					"mobile" => $mobile,
-					"cv" => file_get_contents($_FILES['cv_file']['tmp_name'])
-				));
+				$temp_path = $_FILES['cv_file']['tmp_name'];
+				$finfo = finfo_open(FILEINFO_MIME_TYPE);
+				if (finfo_file($finfo, $temp_path) == "application/pdf")
+				{
+					mysql_insert("application", array(
+						"user_id" => $_SESSION['user']['id'],
+						"internship_id" => $internship_id,
+						"mobile" => $mobile,
+						"cv" => file_get_contents($temp_path)
+					));
+				}
+				else
+				{
+					$errors[] = "Your CV has to be a valid PDF file. Please try again.";
+				}
 			}
 			else 
 			{
