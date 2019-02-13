@@ -32,7 +32,7 @@ require_once("header.php");?>
 		  unset($row['cv']);
 		  print_r($row);
 		  $row['description'] = nl2br($row['description']);
-		  generateRow($row, ($row['status'] == -1)? array("<a href='#'>Retract</a>" : ''));
+		  generateRow($row, ($row['status'] == -1)? array("<a href='#'>Retract</a>") : '');
        }
 	 echo '</tbody></table>';
  
