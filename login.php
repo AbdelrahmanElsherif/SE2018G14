@@ -4,7 +4,7 @@ require_once("global_header.php");
 ?>
 <div class="container login-container">
             <div class="row">
-                <div class="offset-md-4 col-md-4 loginform">
+                <div class="offset-md-3 col-md-6 loginform">
                 <h3>Log into Intern.com</h3>
 				<form method = "post">
 					<?php include ('errors.php') ?>

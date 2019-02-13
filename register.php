@@ -3,15 +3,15 @@ $css = array("css/login.css");
 require_once("global_header.php");?>
  <div class="container login-container">
             <div class="row">
-                <div class="offset-md-4 col-md-4 loginform">
+                <div class="offset-md-3 col-md-6 loginform">
                 <h3>Register for Intern.com</h3>
 				<form method = "post">
 					<?php include ('errors.php') ?>
                     <div class="form-group">
-                        <input type="text" name="email" class="form-control" name="username" placeholder="Username" value="" />
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="text" name="username" class="form-control" name="email" placeholder="Email" value="" />
+                        <input type="text" class="form-control" name="email" placeholder="Email" value="" />
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" name="password1" placeholder="Password" value="" />

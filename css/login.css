@@ -3,6 +3,8 @@
     margin-bottom: 5%;
 }
 .loginform{
+    padding-right: 25px;
+    padding-left: 25px;
     padding: 5%;
 	border-radius:30px;
     background: #0062cc;
