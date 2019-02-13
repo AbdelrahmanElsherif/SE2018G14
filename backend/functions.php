@@ -8,24 +8,24 @@ function loopThrough($rows, $key, &$array)
 }
 function hasAccess($id, $user_id)
 {
-	$internship = getInternship($id)['user_id'];
+	$internship = getInternship($id, false, "user_id")['user_id'];
 	return ($internship && $user_id == $internship);
 }
 function getUser($id)
 {
 	return mysql_select("user", "", array("id" => $id))->fetch();
 }
-function getInternship($id, $user_id = false)
+function getInternship($id, $user_id = false, $selector = "*")
 {
-	return $user_id? mysql_select("internship", "AND", array("id" => intval($id), "user_id" => intval($user_id)))->fetch() : mysql_select("internship", "", array("id" => intval($id)))->fetch();
+	return $user_id? mysql_select("internship", "AND", array("id" => intval($id), "user_id" => intval($user_id)), "=", $selector)->fetch() : mysql_select("internship", "", array("id" => intval($id)), "=", $selector)->fetch();
 }
 function getApplicationById($id)
 {
 	return mysql_select("application", "AND", array("id" => intval($id)))->fetch();
 }
-function getApplication($internship_id, $user_id = false)
+function getApplication($internship_id, $user_id = false, $selector = "*")
 {
-	return $user_id? mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)))->fetch() : mysql_select("application", "AND", array("internship_id" => intval($internship_id)))->fetch();
+	return $user_id? mysql_select("application", "AND", array("user_id" => intval($user_id), "internship_id" => intval($internship_id)), "=", $selector)->fetch() : mysql_select("application", "AND", array("internship_id" => intval($internship_id)), "=", $selector)->fetch();
 }
 function getName($name)
 {
