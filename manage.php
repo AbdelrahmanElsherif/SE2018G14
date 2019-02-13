@@ -48,7 +48,7 @@ function processStatus($status)
 		  $row['show_email'] = $row['show_email']? "Yes" : "No";
 		  $row['description'] = nl2br($row['description']);
 		  $row['status'] = processStatus($row['status']);
-		  generateRow($row, ($row['status'] == -1)? array("<a href='#'>Retract</a>") : '');
+		  generateRow($row, ($row['status'] == "Undecided")? array("<a href='#'>Retract</a>") : array());
        }
 	 echo '</tbody></table>';
  
