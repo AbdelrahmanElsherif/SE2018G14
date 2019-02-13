@@ -32,7 +32,6 @@ function processStatus($status)
       <th>Period</th>
       <th>Type</th>
       <th>Academic Year</th>
-      <th>Description</th>
       <th>Mobile</th>
       <th>Email?</th>
       <th>Status</th>
@@ -45,8 +44,8 @@ function processStatus($status)
 		  unset($row['user_id']);
 		  unset($row['internship_id']);
 		  unset($row['cv']);
+		  unset($row['description']);
 		  $row['show_email'] = $row['show_email']? "Yes" : "No";
-		  $row['description'] = nl2br($row['description']);
 		  $row['status'] = processStatus($row['status']);
 		  generateRow($row, ($row['status'] == "Undecided")? array("<a href='#'>Retract</a>") : array());
        }
