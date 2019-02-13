@@ -20,7 +20,7 @@ require_once("global_header.php");?>
                         <input type="password" class="form-control" name="password2" placeholder="Confirm Password" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
+                        <input type="submit" class="btnSubmit" value="Register" />
                     </div>
 					<div class="form-group">
 						<a href="login.php" class="wc">Already a member? Log in here</a>
