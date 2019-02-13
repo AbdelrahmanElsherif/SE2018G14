@@ -5,22 +5,18 @@ $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
 $academic_years = getConstant("academic_years");
-
-if (isset($_GET['q']))
+$companies = dosql("SELECT DISTINCT company FROM internship")->fetchAll();
+$roles = dosql("SELECT DISTINCT role FROM internship")->fetchAll();
+if (isset($_GET['q']) && $_GET['s'] == 1)
 {
 	$errors = array();
 	//$errors = checkRequiredFields($required_fields, $_GET);
 	if (!$errors)
 	{
 		$params = array();
-		if ($_GET['q'])
-		{
-			$params['role'] = htmlentities(strip_tags("%".$_GET['q']."%"));
-			$params['company'] = htmlentities(strip_tags("%".$_GET['q']."%"));
-			$params['description'] = htmlentities(strip_tags("%".$_GET['q']."%"));
-		}
+		if (isset($_GET['role']) && checkExists($_GET['role'], $roles)) $params['role'] = checkExists($_GET['role'], $roles);
+		if (isset($_GET['company']) && checkExists($_GET['company'], $companies)) $params['company'] = checkExists($_GET['field'], $fields);
 		if (isset($_GET['field']) && checkExists($_GET['field'], $fields)) $params['field'] = checkExists($_GET['field'], $fields);
-		
 		if (isset($_GET['city']) && checkExists($_GET['city'], $cities)) $params['city'] = checkExists($_GET['city'], $cities);
 		if (isset($_GET['period']) && checkExists($_GET['period'], $periods)) $params['period']= checkExists($_GET['period'], $periods);
 		if (isset($_GET['type']) && checkExists($_GET['type'], $types)) $params['type'] = checkExists($_GET['type'], $types);

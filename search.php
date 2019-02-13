@@ -1,13 +1,15 @@
 <?php
 require_once("header.php");
-if (!isset($_GET['q']))
+if (!isset($_GET['q']) || $_GET['q'] != 1)
 {
 ?>
 <form method="get">
+<input type="hidden" name="s" value="1" /> 
       <?php include ('errors.php') ?>
-      <input type="text" name="q" placeholder="Search..." class="form-control" value="" maxlength="25" autocomplete="off" onmousedown="" onblur=""/></br>
-	  <h2>Advanced Filtering (optional):</h2>
+      <h2>Advanced Filtering (optional):</h2>
 	  <?php
+	  generateSelect("Company", $companies);
+	  generateSelect("Role", $roles);
 		  generateSelect("Field", $fields); generateSelect("City", $cities);
 generateSelect("Period", $periods); generateSelect("Type", $types);
 generateSelect("Academic Year", $academic_years);?>
