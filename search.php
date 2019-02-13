@@ -1,10 +1,9 @@
 <?php
 require_once("header.php");
-if (!isset($_GET['q']) || $_GET['q'] != 1)
+if (!isset($_GET['s']) || $_GET['s'] != 1)
 {
 ?>
 <form method="get">
-<input type="hidden" name="s" value="1" /> 
       <?php include ('errors.php') ?>
       <h2>Advanced Filtering (optional):</h2>
 	  <?php
@@ -15,6 +14,7 @@ generateSelect("Period", $periods); generateSelect("Type", $types);
 generateSelect("Academic Year", $academic_years);?>
 <input type="submit" class="btn btn-primary" value="Search"/>
 <p></br></p>
+<input type="hidden" name="s" value="1" /> 
     </form>
  <?php
 }

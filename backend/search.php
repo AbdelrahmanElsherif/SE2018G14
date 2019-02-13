@@ -9,7 +9,7 @@ $companies = array();
 $roles = array();
 loopThrough(dosql("SELECT DISTINCT company FROM internship")->fetchAll(), "company", $companies);
 loopThrough(dosql("SELECT DISTINCT role FROM internship")->fetchAll(), "role", $roles);
-if (isset($_GET['q']) && $_GET['s'] == 1)
+if (isset($_GET['s']) && $_GET['s'] == 1)
 {
 	$errors = array();
 	//$errors = checkRequiredFields($required_fields, $_GET);
