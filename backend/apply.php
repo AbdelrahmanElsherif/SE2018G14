@@ -30,6 +30,7 @@ if ($_POST)
 							"mobile" => $mobile,
 							"cv" => file_get_contents($temp_path)
 						));
+						$_SESSION['success'][] = "You have applied to this internship successfully";
 					}
 					else
 					{
