@@ -1,4 +1,16 @@
 <?php
+function processStatus($status)
+{
+	switch ($status)
+	{
+		case -1:
+			return "Undecided";
+		case 0:
+			return "Rejected";
+		case 1:
+			return "Accepted";
+	}
+}
 function showSearch($stmt, $link = "apply", $text = "")
 {
 	if (!$text) $text = $link;

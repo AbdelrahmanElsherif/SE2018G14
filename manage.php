@@ -1,18 +1,5 @@
 <?php include ('common.php');
 require_once("header.php");
-function processStatus($status)
-{
-	switch ($status)
-	{
-		case -1:
-			return "Undecided";
-		case 0:
-			return "Rejected";
-		case 1:
-			return "Accepted";
-	}
-}
-
 ?>
 <h3>List of your internships:</h3>
  <?php
