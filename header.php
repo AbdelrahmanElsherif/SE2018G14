@@ -58,7 +58,7 @@ $("#notifBar").click(function() {
 		$( "#notifBody" ).html('Please wait...');
 	$.get( "notifications.php?m=api", function( data ) {
 		$("#notifBar span").removeClass("active");
-		jQuery.each(data, function() {
+		jQuery.each(JSON.parse(data), function() {
   $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+this.time+'</small></div></div></a>');
 });
 
