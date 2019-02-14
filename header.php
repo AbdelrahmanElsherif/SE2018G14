@@ -25,11 +25,6 @@ function getURL($url)
           <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-          <a class="navbar-brand mr-auto" href="index.php">
-            <img src="img/logo.png" alt="Intern.com" class="navbar-brand-img">
-          </a>
-
           <form class="form-inline mr-4 d-none d-lg-flex">
             <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
 
