@@ -4,6 +4,20 @@ $css = array("css/header_test.css");
 $js = array("js/mobile.js");
 require_once("global_header.php");
 require_once("view_functions.php");
+$pages = array(
+"index.php" => "Home",
+"manage.php;application.php;apply.php" => "Manage Applications",
+"post_internship.php" => "Post Internship",
+"serch.php" => "Explore"
+);
+function getURL($url)
+{
+	if (strpos($url, ";") !== false)
+	{
+		return explode(";", $url)[0];
+	}
+	return $url;
+}
 ?>
 <header id="header">
     <div class="container">
@@ -15,11 +29,9 @@ require_once("view_functions.php");
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.php">Home</a></li>
-          <li><a href="search.php">Explore</a></li>
-          <li><a href="post_internship.php">Post Internship</a></li>
-          <li><a href="application.php">Manage Applications</a></li>
-            <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></a>
+		<?php foreach($pages as $url => $page) { echo "<li".( __FILE__ == getURL($url)? "class='menu-active'" : "")."><a href='".getURL($url)."'>".$page."</a></li>"; } ?>
+          
+		  <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></a>
             <ul>
               <li><a class="dropdown-item" href="profile.php">Profile</a></li>
               <li><div class="dropdown-divider"></div></li>
