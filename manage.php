@@ -2,7 +2,7 @@
 require_once("header.php");
 ?>
 <div class="row">
-          <div class="col-12 col-xl-7">
+          <div class="col-12 col-xl-12">
             
             <!-- Goals -->
             <div class="card">
@@ -24,7 +24,7 @@ require_once("header.php");
           </div>
 </div>
 <div class="row">
-          <div class="col-12 col-xl-7">
+          <div class="col-12 col-xl-12">
             
             <!-- Goals -->
             <div class="card">
