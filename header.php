@@ -89,7 +89,7 @@ function getURL($url)
             <div class="dropdown">
         
               <!-- Toggle -->
-              <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Logged in as <b><?php echo $_SESSION['user']['username']; ?></b>
               </a>
 
