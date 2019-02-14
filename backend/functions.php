@@ -1,4 +1,8 @@
 <?php
+function sendNotification($user_id, $text)
+{
+	mysql_insert("notifications", array("user_id" => $user_id, "text" => $text));
+}
 function loopThrough($rows, $key, &$array)
 {
 	foreach ($rows as $row)
@@ -6,10 +10,11 @@ function loopThrough($rows, $key, &$array)
 		$array[] = $row[$key];
 	}
 }
-function hasAccess($id, $user_id)
+function getPoster($id, $user_id)
 {
-	$internship = getInternship($id, false, "user_id")['user_id'];
-	return ($internship && $user_id == $internship);
+	$internship = getInternship($id, false, "user_id");
+	if ($internship) return $internship['user_id'];
+	return false;
 }
 function getUser($id)
 {

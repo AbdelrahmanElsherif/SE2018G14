@@ -16,7 +16,8 @@ if ($_POST)
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
 		{
-			if (!hasAccess($internship_id, $_SESSION['user']['id']))
+			$poster = hasAccess($internship_id, $_SESSION['user']['id']);
+			if ($poster !== false)
 			{
 				if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 				{
@@ -30,6 +31,7 @@ if ($_POST)
 							"mobile" => $mobile,
 							"cv" => file_get_contents($temp_path)
 						));
+						sendNotification($poster, "You received a new application. <a class='btn btn-primary' href='application.php?internship_id=".$internship_id."'>Show</a>");
 						$_SESSION['success'][] = "You have applied to this internship successfully";
 					}
 					else
