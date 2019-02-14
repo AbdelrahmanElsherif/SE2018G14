@@ -2,6 +2,10 @@
 $username ="";
 $email = "";
 $errors = array();
+function startsWithNumber($string) {
+    return strlen($string) > 0 && ctype_digit(substr($string, 0, 1));
+}
+
 function register($username, $email, $password, $name)
 {
 	$users = mysql_select("user", "OR", array("username" => $username, "email" => $email))->fetch();
@@ -22,11 +26,11 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
   $name = $_POST['name'];
 
 //ensure fields are filled properly
-if (!$name || preg_match('/^[a-z ,.\'-]+$/i', $name) === false){
+if (!$name || !preg_match('/^[a-z ,.\'-]+$/i', $name)){
   array_push($errors, "Please enter a valid name.");
 }
-if (empty($username) || !ctype_alnum($username) || (strlen($username) < 4 || strlen($username) > 16)){
-  array_push($errors, "Username is a required field. It must be alphanaumeric and within 4-16 characters.");
+if (empty($username) || startsWithNumber($username) || !ctype_alnum($username) || (strlen($username) < 4 || strlen($username) > 16)){
+  array_push($errors, "Username is a required field. It must be alphanaumeric and within 4-16 characters. It cannot start with numbers.");
 }
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
   array_push($errors, "A valid email is required.");
