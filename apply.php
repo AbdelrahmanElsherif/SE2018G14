@@ -1,5 +1,6 @@
-<?php include ('common.php');
-$css = array("css/style.css");
+<?php
+$page_title = "Management";
+$pre_title = "Apply";
 require_once("header.php");
 ?>
 

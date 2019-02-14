@@ -1,4 +1,6 @@
 <?php
+$page_title = "Search";
+$pre_title = "Overview";
 require_once("header.php");
 if (!isset($_GET['s']) || $_GET['s'] != 1)
 {

@@ -1,5 +1,6 @@
 <?php
-$css = array("css/style.css");
+$page_title = "Post Internship";
+$pre_title = "Overview";
 require_once('header.php'); 
 ?>
 <h2>Post Internship</h2>
