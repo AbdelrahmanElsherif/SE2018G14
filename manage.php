@@ -1,11 +1,28 @@
 <?php include ('common.php');
 require_once("header.php");
 ?>
-<h3>List of your internships:</h3>
- <?php
- showSearch($internship_stmt, "application", "Manage");
- 
- ?>
+<div class="row">
+          <div class="col-12 col-xl-7">
+            
+            <!-- Goals -->
+            <div class="card">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <!-- Title -->
+                    <h4 class="card-header-title">
+                      Your Internships
+                    </h4>
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+              <div class="table-responsive mb-0" data-toggle="lists" data-lists-values="[&quot;goal-project&quot;, &quot;goal-status&quot;, &quot;goal-progress&quot;, &quot;goal-date&quot;]">
+                <?php  showSearch($internship_stmt, "application", "Manage"); ?>
+              </div>
+            </div>
+
+          </div>
+</div>
 <br><br>
 <h3>List of your applications:</h3>
  <?php
