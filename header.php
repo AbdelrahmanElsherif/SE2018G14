@@ -81,7 +81,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                 <?php 
 				while ($notif_row = $notifications->fetch()) {
 					?>
-					<div class="list-group-item px-0" href="#!">
+					<a class="list-group-item px-0" href="<?php echo $notif_row['link']; ?>">
               
                       <div class="row">
                         

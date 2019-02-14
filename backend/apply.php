@@ -31,7 +31,7 @@ if ($_POST)
 							"mobile" => $mobile,
 							"cv" => file_get_contents($temp_path)
 						));
-						sendNotification($poster, "You received a new application for ".$poster['role']." at ".$poster['company'].". <a class='btn btn-primary btn-sm' href='application.php?internship_id=".$internship_id."'>Show</a>");
+						sendNotification($poster, "You received a new application for ".$poster['role']." at ".$poster['company'], "application.php?internship_id=".$internship_id);
 						$_SESSION['success'][] = "You have applied to this internship successfully";
 					}
 					else
