@@ -54,18 +54,64 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                 </span>
               </a>
 <script>
+if (!Date.now) {
+    Date.now = function() { return new Date().getTime(); }
+}
+function hTime(time) {
+
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = Date.now() - time;
+
+    if (elapsed < msPerMinute) {
+         return Math.round(elapsed/1000) + ' seconds ago';   
+    }
+
+    else if (elapsed < msPerHour) {
+         return Math.round(elapsed/msPerMinute) + ' minutes ago';   
+    }
+
+    else if (elapsed < msPerDay ) {
+         return Math.round(elapsed/msPerHour ) + ' hours ago';   
+    }
+
+    else if (elapsed < msPerMonth) {
+        return Math.round(elapsed/msPerDay) + ' days ago';   
+    }
+
+    else if (elapsed < msPerYear) {
+        return Math.round(elapsed/msPerMonth) + ' months ago';   
+    }
+
+    else {
+        return Math.round(elapsed/msPerYear ) + ' years ago';   
+    }
+}
+
 $("#notifBar").click(function() {
 		$( "#notifBody" ).html('Please wait...');
 	$.get( "notifications.php?m=api", function( data ) {
 		$( "#notifBody" ).html('');
 		$("#notifBar span").removeClass("active");
 		jQuery.each(JSON.parse(data), function() {
-  $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+this.time+'</small></div></div></a>');
+  $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+hTime(this.time)+'</small></div></div></a>');
 });
 
 
 });
 });
+function checkNotifications()
+{
+	$.get( "notifications.php?m=api&a=unread", function( data ) { if (data) $("#notifBar span").addClass("active"); });
+}
+setInterval(function() {
+  if (!$("#notifBar span").hasClass('active')) checkNotifications();
+}, 5000);
+
 </script>
               <!-- Menu -->
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
