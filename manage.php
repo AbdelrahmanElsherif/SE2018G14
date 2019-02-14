@@ -66,7 +66,7 @@ require_once("header.php");
 		  unset($row['description']);
 		  $row['show_email'] = $row['show_email']? "Yes" : "No";
 		  $row['status'] = processStatus($row['status']);
-		  generateRow($row, ($row['status'] == "Undecided")? array("<form method='POST'><input type='submit' class='btn btn-danger' name='retract_".$id."' value='Retract'></form>") : array());
+		  generateRow($row, ($row['status'] == "Undecided")? array("<form method='POST'><input type='submit' class='btn btn-danger btn-sm' name='retract_".$id."' value='Retract'></form>") : array());
        }
 	 echo '</tbody></table>'; ?>
               </div>
