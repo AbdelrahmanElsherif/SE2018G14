@@ -19,11 +19,15 @@ require_once("header.php");
   <div class="col-md-12">
  <hr class="mt-4 mb-5"> 
  <form method="POST" enctype="multipart/form-data">
+ <div class="row">
+ <div class="col-md-6">
    <?php
    generateInput("Mobile");
    generateInput("CV File", "file");
    ?>
-   <div class="form-group">
+ </div>
+ <br><br>
+   <div class="form-group col-md-6">
                     <label class="mb-1">
                       Show Email
                     </label>
@@ -41,6 +45,7 @@ require_once("header.php");
 
                       </div>
                     </div>
+	</div>
 	</div>
    <hr class="mt-4 mb-5">
    <input type="hidden" name="internship_id" value="<?php echo $internship['id']; ?>"></input>
