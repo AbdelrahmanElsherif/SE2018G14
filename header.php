@@ -95,10 +95,16 @@ $("#notifBar").click(function() {
 	$.get( "notifications.php?m=api", function( data ) {
 		$( "#notifBody" ).html('');
 		$("#notifBar span").removeClass("active");
+		if (JSON.parse(data).length > 0)
+		{
 		jQuery.each(JSON.parse(data), function() {
   $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+hTime(this.time)+'</small></div></div></a>');
 });
-
+		}
+		else
+		{
+			 $( "#notifBody" ).html("No notifications yet.");
+		}
 
 });
 });
