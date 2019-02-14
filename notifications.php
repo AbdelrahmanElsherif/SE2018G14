@@ -27,7 +27,7 @@ require_once("header.php");
 	  </thead>
 	  <tbody> <?php  while ($row = $stmt->fetch())
 				{
-					$row['time'] = hTime($row['time']);
+					$row['time'] = hTime($row['time']) . " ago";
 					generateRow($row);
 				}
 				?>
