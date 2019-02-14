@@ -26,10 +26,10 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
           <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <form class="form-inline mr-4 d-none d-lg-flex">
+          <form class="form-inline mr-4 d-none d-lg-flex" action='search.php'>
             <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
 
-              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" value='<?php echo (isset($_GET['q'])? $_GET['q'] : ""); ?>' data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
+              <input type="search" name='q' class="form-control form-control-prepended  dropdown-toggle search" value='<?php echo (isset($_GET['q'])? $_GET['q'] : ""); ?>' data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
               <div class="input-group-prepend">
                 <div class="input-group-text">
                   <i class="fe fe-search"></i>
