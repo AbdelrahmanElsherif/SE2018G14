@@ -47,7 +47,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
         
               <!-- Toggle -->
               <a href="#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="icon<?php echo (hasUnread($_SESSION['user']['id'])? " active" : ""); ?>">
+                <span class="icon<?php echo ($hasUnread? " active" : ""); ?>">
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
@@ -76,7 +76,8 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                 </div> <!-- / .card-header -->
                 <div class="card-body">
 				<div class="list-group list-group-flush my-n3">
-                <?php while ($notif_row = getNotifications($_SESSION['user']['id'], true)->fetch()) {
+                <?php 
+				while ($notif_row = $notifications->fetch()) {
 					?>
 					<a class="list-group-item px-0" href="#!">
               
