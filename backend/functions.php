@@ -1,4 +1,16 @@
 <?php
+function processStatus($status)
+{
+	switch ($status)
+	{
+		case -1:
+			return "Undecided";
+		case 0:
+			return "Rejected";
+		case 1:
+			return "Accepted";
+	}
+}
 function sendNotification($user_id, $text, $link)
 {
 	mysql_insert("notifications", array("user_id" => $user_id, "text" => $text, "link" => $link, "time" => time()));
