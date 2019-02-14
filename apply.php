@@ -1,6 +1,6 @@
 <?php
 $page_title = "Management";
-$pre_title = "Apply";
+$pre_title = "Apply for: " . echo $internship['role'];
 require_once("header.php");
 ?>
 
@@ -52,7 +52,6 @@ require_once("header.php");
  </br>
 </br>
 <div class="content container">
- <h3 class="text-center">Application for: <?php echo $internship['role']; ?></h3>
  <form method="POST" enctype="multipart/form-data">
    <?php include ('errors.php');
    generateInput("Mobile");
