@@ -1,7 +1,7 @@
 <?php
 function getEmail($user_id)
 {
-	$email = mysql_select("user", "", array("user_id" => $user_id), "=", "email")->fetch();
+	$email = mysql_select("user", "", array("id" => $user_id), "=", "email")->fetch();
 	return $email['email'];
 }
 function processStatus($status)
