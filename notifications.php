@@ -21,7 +21,7 @@ require_once("header.php");
               <div class="table-responsive mb-0" data-toggle="lists" data-lists-values="[&quot;goal-project&quot;, &quot;goal-status&quot;, &quot;goal-progress&quot;, &quot;goal-date&quot;]">
                 <?php  while ($row = $stmt->fetch())
 				{
-					print_r($row):	
+					print_r($row);	
 				}
 				?>
               </div>
