@@ -1,4 +1,6 @@
 <?php include ('common.php');
+$pre_title = "Management";
+$page_title = "Overview";
 require_once("header.php");
 ?>
 <div class="row">

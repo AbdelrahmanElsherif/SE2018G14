@@ -1,4 +1,6 @@
 <?php include ('common.php');
+$pre_title = "Management";
+$page_title = "Manage Internship";
 require_once("header.php");
 require_once("backend/functions.php");
 ?>

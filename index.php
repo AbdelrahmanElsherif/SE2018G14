@@ -1,4 +1,6 @@
-<?php require_once('header.php'); ?>
+<?php $pre_title = "Dashboard";
+$page_title = "Overview";
+require_once('header.php'); ?>
 <!--
 <style>
  body {font-family: Arial, Helvetica, sans-serif; background-image: url(slide_one.jpg); font-size: 20px ;background-repeat:no-repeat;background-position: 50% 22% ; background-size: 100%; }
