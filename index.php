@@ -1,5 +1,5 @@
-<?php $pre_title = "Dashboard";
-$page_title = "Overview";
+<?php $page_title = "Dashboard";
+$pre_title = "Overview";
 require_once('header.php'); ?>
 <!--
 <style>
