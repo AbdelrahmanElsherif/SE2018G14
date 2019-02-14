@@ -1,8 +1,8 @@
 <?php require_once('common.php');
 requiresAuthentication();
-$css = array("css/header_test.css", "css/main.css", "fonts/feather/feather.min.css");
+$css = array("css/main.css", "fonts/feather/feather.min.css");
 $js = array("js/mobile.js");
-require_once("global_header.php");
+require_once("global_header.php");	
 require_once("view_functions.php");
 $pages = array(
 "index.php" => "Home",
@@ -115,7 +115,7 @@ function getURL($url)
             <!-- Navigation -->
             <ul class="navbar-nav m	r-auto">
 			
-			<?php foreach($pages as $url => $page) { echo "<li class='nav-item".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."'><a class='nav-link' href='".getURL($url)."'>".$page."</a></li>"; } ?>
+			<?php foreach($pages as $url => $page) { echo "<li class='nav-item".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."'><a class='nav-link".(basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."' href='".getURL($url)."'>".$page."</a></li>"; } ?>
           
             </ul>
 
