@@ -3,7 +3,7 @@
 <style>
  body {font-family: Arial, Helvetica, sans-serif; background-image: url(slide_one.jpg); font-size: 20px ;background-repeat:no-repeat;background-position: 50% 22% ; background-size: 100%; }
  </style>-->
-<h1>Featured</h1>
+<h4>Featured</h4>
 <div class="row">
 <div class="col-md-3">
 <div class="card">
