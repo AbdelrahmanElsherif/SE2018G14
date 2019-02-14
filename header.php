@@ -93,7 +93,7 @@ function hTime(time) {
 }
 
 $("#notifBar").click(function() {
-		if (!$( "#notifBody" ).html) $( "#notifBody" ).html('Please wait...');
+		if (!$( "#notifBody" ).html()) $( "#notifBody" ).html('Please wait...');
 	$.get( "notifications.php?m=api", function( data ) {
 		$( "#notifBody" ).html('');
 		$("#notifBar span").removeClass("active");
