@@ -60,6 +60,6 @@ else if (isset($_GET['internship_id']) && $_GET['internship_id'])
 {
 	$application = getApplication($_GET['internship_id'], $_SESSION['user']['id']);
 	if ($application) $errors[] = "You have already applied for this position";
-	if (hasAccess($_GET['internship_id'], $_SESSION['user']['id'])) $errors[] = "You cannot apply to a position you posted.";
+	if (getPoster($_GET['internship_id']) == $_SESSION['user']['id']) $errors[] = "You cannot apply to a position you posted.";
 }
 ?>
