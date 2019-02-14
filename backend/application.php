@@ -23,7 +23,7 @@ if ($internship)
 		   if ($status != $row['status'])
 		   {
 				dosql("UPDATE application SET status=:status WHERE id=:id AND status=:status2", array(":status2" => -1, ":status"=> $status,"id"=>$row['id']));
-				sendNotification($row['status'], "Your application for <b>".$internship['role']."</b> at <b>".$internship['company']."</b> has been ". strtolower(processStatus($status)), "manage.php");
+				sendNotification($row['user_id'], "Your application for <b>".$internship['role']."</b> at <b>".$internship['company']."</b> has been ". strtolower(processStatus($status)), "manage.php");
 		   }
 		}
 		$stmt->execute();
