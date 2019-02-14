@@ -131,6 +131,14 @@ function getURL($url)
                  <?php echo isset($pre_title)? '<h1 class="header-title">'.$page_title.'</h1>' : ""; ?>
              
               </div>
+			  <?php if (isset($control_btn)) {
+				  ?>
+			  <div class="col-auto">
+                
+                <?php echo $control_btn; ?>
+
+              </div>
+			  <?php } ?>
             </div> <!-- / .row -->
           </div> <!-- / .header-body -->
 

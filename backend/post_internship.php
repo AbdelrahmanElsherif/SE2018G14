@@ -7,7 +7,6 @@ $cities = getConstant("cities");
 $periods = getConstant("periods");
 $types = getConstant("types");
 $academic_years = getConstant("academic_years");
-
 if ($_POST)
 {
 	$errors = checkRequiredFields($required_fields, $_POST);

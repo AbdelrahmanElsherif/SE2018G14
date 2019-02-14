@@ -3,7 +3,6 @@ $page_title = "Post Internship";
 $pre_title = "Overview";
 require_once('header.php'); 
 ?>
-<h2>Post Internship</h2>
 <?php require_once("errors.php"); ?>
 <form method='POST'>
 <?php  generateInput("Company");  generateSelect("Field", $fields); generateSelect("City", $cities);
