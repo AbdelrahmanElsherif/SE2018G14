@@ -12,7 +12,7 @@ function loopThrough($rows, $key, &$array)
 }
 function getPoster($id)
 {
-	$internship = getInternship($id, false, "user_id");
+	$internship = getInternship($id, false, "user_id,company,role");
 	if ($internship) return $internship['user_id'];
 	return false;
 }

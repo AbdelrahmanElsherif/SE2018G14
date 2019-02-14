@@ -84,22 +84,21 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 					<a class="list-group-item px-0" href="#!">
               
                       <div class="row">
+                        
                         <div class="col ml-n2">
-                    
-                          <!-- Content -->
                           <div class="small text-muted">
-                            <?php echo $notif_row['text']; ?>
-                          </div>
+                           <?php echo $notif_row['text']; ?>
+						  </div>
 
                         </div>
                         <div class="col-auto">
 
                           <small class="text-muted">
-                            <?php hTime($notif_row['time']); ?>
+                             <?php echo hTime($notif_row['time']); ?>
                           </small>
                     
                         </div>
-                      </div> <!-- / .row -->
+                      </div> 
 
                     </a>
 					<?php
