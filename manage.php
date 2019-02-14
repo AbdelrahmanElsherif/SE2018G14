@@ -23,11 +23,24 @@ require_once("header.php");
 
           </div>
 </div>
-<br><br>
-<h3>List of your applications:</h3>
- <?php
- 	echo '
-	    <table class="table">
+<div class="row">
+          <div class="col-12 col-xl-7">
+            
+            <!-- Goals -->
+            <div class="card">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <!-- Title -->
+                    <h4 class="card-header-title">
+                      Your Applications
+                    </h4>
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+              <div class="table-responsive mb-0" data-toggle="lists" data-lists-values="[&quot;goal-project&quot;, &quot;goal-status&quot;, &quot;goal-progress&quot;, &quot;goal-date&quot;]">
+                <?php  echo '
+	    <table class="table table-sm card-table">
 	<thead>
       <th>Position</th>
       <th>Company</th>
@@ -53,7 +66,10 @@ require_once("header.php");
 		  $row['status'] = processStatus($row['status']);
 		  generateRow($row, ($row['status'] == "Undecided")? array("<form method='POST'><input type='submit' class='btn btn-danger' name='retract_".$id."' value='Retract'></form>") : array());
        }
-	 echo '</tbody></table>';
- 
- ?>
+	 echo '</tbody></table>'; ?>
+              </div>
+            </div>
+
+          </div>
+</div>
 <?php require_once("footer.php"); ?>

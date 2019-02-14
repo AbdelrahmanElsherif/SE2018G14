@@ -15,7 +15,7 @@ function showSearch($stmt, $link = "apply", $text = "")
 {
 	if (!$text) $text = $link;
 	echo '
-	    <table class="table table-sm table-nowrap card-table">
+	    <table class="table table-sm card-table">
 	<thead>
       <th>Position</th>
       <th>Company</th>
