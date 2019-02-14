@@ -66,7 +66,38 @@ catch (PDOException $ex)
 	{
 		if (!isset($_SESSION['user']) || !$_SESSION['user']) header("Location: login.php");
 	}
+	function getNotifications($user_id, $limit = false)
+{
+        return dosql("SELECT text,time,link FROM notifications WHERE user_id=:user_id ORDER BY time DESC".($limit? " LIMIT 10" : ""), array(":user_id" => $user_id));
+}
+function hasUnread($user_id)
+{
+        $row = dosql("SELECT id FROM notifications WHERE seen=:seen AND user_id=:user_id LIMIT 1", array(":user_id" => $user_id, ":seen" => 0))->fetch();
+        return $row? true : false;
+}
+
+        function hTime($time)
+        {
+$time = time()-$time;
+        $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+        );
+
+        foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+        }
+
+        }
 session_start(); 
+if (basename($_SERVER["SCRIPT_FILENAME"]) != "login.php" && basename($_SERVER["SCRIPT_FILENAME"]) != "register.php") requiresAuthentication();
 if (file_exists(getcwd()."/backend/".basename($_SERVER['PHP_SELF']))) require_once(getcwd()."/backend/".basename($_SERVER['PHP_SELF']));
 header("X-XSS-Protection: 1; mode=block");
 header('Content-Type: text/html; charset=utf-8'); 
