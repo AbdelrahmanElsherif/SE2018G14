@@ -5,7 +5,7 @@ require_once("header.php");
 ?>
 <div class="content container">
  <?php include ('errors.php'); ?>
- <div class="col-md-12">
+ <div class="row">
   <div class="col-md-4 offset-md-3">
    <p>Company: <b><?php echo $internship['company']; ?></b></p>
    <p>Position: <b><?php echo $internship['role']; ?></b></p>
