@@ -29,7 +29,7 @@ function getURL($url)
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-		<?php foreach($pages as $url => $page) { echo "<li".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? "class='menu-active'" : "")."><a href='".getURL($url)."'>".$page."</a></li>"; } ?>
+		<?php foreach($pages as $url => $page) { echo "<li".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " class='menu-active'" : "")."><a href='".getURL($url)."'>".$page."</a></li>"; } ?>
           
 		  <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></a>
             <ul>
