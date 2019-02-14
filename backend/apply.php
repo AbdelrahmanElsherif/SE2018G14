@@ -12,6 +12,7 @@ if ($_POST)
 	if (!$errors)
 	{
 		$mobile = $_POST['mobile'];
+		$show_email = isset($_POST['show_email']) 1 : 0;
 		$internship_id = $_POST['internship_id'];
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
@@ -29,6 +30,7 @@ if ($_POST)
 							"user_id" => $_SESSION['user']['id'],
 							"internship_id" => $internship_id,
 							"mobile" => $mobile,
+							"show_email" => $show_email,
 							"cv" => file_get_contents($temp_path)
 						));
 						sendNotification($poster['user_id'], "You received a new application for <b>".$poster['role']."</b> at <b>".$poster['company']."</b>", "application.php?internship_id=".$internship_id);

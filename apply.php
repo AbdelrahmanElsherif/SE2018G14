@@ -23,6 +23,25 @@ require_once("header.php");
    generateInput("Mobile");
    generateInput("CV File", "file");
    ?>
+   <div class="form-group">
+                    <label class="mb-1">
+                      Show Email
+                    </label>
+
+                    <small class="form-text text-muted">
+                      Enabling this option will allow the employer to view the email address attached to your account: <b><?php echo $_SESSION['user']['email']; ?></b>
+                    </small>
+
+                    <div class="row">
+                      <div class="col-auto">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="show_email" name="show_email">
+                          <label class="custom-control-label" for="show_email"></label>
+                        </div>
+
+                      </div>
+                    </div>
+	</div>
    <hr class="mt-4 mb-5">
    <input type="hidden" name="internship_id" value="<?php echo $internship['id']; ?>"></input>
    <div class="text-center">
