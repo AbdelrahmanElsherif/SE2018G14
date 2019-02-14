@@ -1,7 +1,7 @@
 <?php
 $page_title = "Search";
 $pre_title = "Overview";
-$control_btn = "<a href='search.php?s=1' class='btn btn-primary'>Show All</a>"
+$control_btn = "<a href='search.php?s=1' class='btn btn-primary'>Show All</a>";
 require_once("header.php");
 if (!isset($_GET['s']) || $_GET['s'] != 1)
 {
