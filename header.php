@@ -118,5 +118,30 @@ function getURL($url)
 
         </div> <!-- / .container -->
       </nav>
-	  <div class="row">
+	  <div class="header">
+        <div class="container">
+
+          <!-- Body -->
+          <div class="header-body">
+            <div class="row align-items-end">
+              <div class="col">
+                
+                  <?php echo isset($pre_title)? '<h6 class="header-pretitle">'.$pre_title.'</h6>' : ""; ?>
+
+                 <?php echo isset($pre_title)? '<h1 class="header-title">'.$page_title.'</h1>' : ""; ?>
+             
+              </div>
+              <div class="col-auto">
+                
+                <!-- Button -->
+                <a href="#!" class="btn btn-primary">
+                  Create Report
+                </a>
+
+              </div>
+            </div> <!-- / .row -->
+          </div> <!-- / .header-body -->
+
+        </div>
+      </div>
 <div class="container">
