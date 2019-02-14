@@ -1,20 +1,29 @@
 <?php
 require_once("functions.php");
-if($_POST)
-{
-  if(isset($_POST['status']) && isset($_POST['application_id']))
-  {
-    dosql("UPDATE internships SET status=:status WHERE id=:id",
-    array("status"=> $_POST['status'],"id"=>$POST['application_id']));
-  }
 
-}
 $internship = false;
 if (isset($_GET['internship_id']))
 $internship = getInternship($_GET['internship_id'], $_SESSION['user']['id']);
 if ($internship)
 {
 	$stmt = mysql_select("application","AND",array("internship_id"=> intval($_GET['internship_id']), "status" => "-1"), "=", "id,user_id,mobile,status");
+	if ($_POST)
+	{
+		while ($row = $stmt->fetch())
+		{
+		   $status = $row['status'];
+		   if (isset($_POST['accept_'.$row['id']]))
+		   {
+			   $status = 1;
+		   }
+		   else if (isset($_POST['reject_'.$row['id']]))
+		   {
+			   $status = 0;
+		   }
+		   if ($status != $row['status'])
+		   dosql("UPDATE application SET status=:status WHERE id=:id AND status=:status2", array(":status2" => -1, ":status"=> $status,"id"=>$row['id']));
+		}
+	}
 }
 else
 {

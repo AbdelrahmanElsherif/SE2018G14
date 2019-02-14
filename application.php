@@ -16,7 +16,7 @@ require_once("backend/functions.php");
     while ($row = $stmt->fetch()) {
 		$row['user_id'] = getUser($row['user_id'])['name'];
 		$row[] = "<a href='download.php?id=".$row['id']."'>Download CV</a>";
-		if ($row['status'] == -1) { $row[] = "<form method='POST'><input type='submit' name='accept_".$row['id']."' class='btn btn-success' value='Accept' /> <input type='submit' name='reject_".$row['id']."' class='btn btn-danger' value='Reject' /></form>"; } else { $row[] = processStatus($row['status']); } 
+		if ($row['status'] == -1) { $row[] = "<form method='POST' action='application.php?internship_id=".intval($_GET['internship_id'])."'><input type='submit' name='accept_".$row['id']."' class='btn btn-success' value='Accept' /> <input type='submit' name='reject_".$row['id']."' class='btn btn-danger' value='Reject' /></form>"; } else { $row[] = processStatus($row['status']); } 
 		unset($row['status']);
 		generateRow($row);
     }
