@@ -18,6 +18,7 @@ function getURL($url)
 	}
 	return $url;
 }
+if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
         <div class="container">
@@ -28,7 +29,7 @@ function getURL($url)
           <form class="form-inline mr-4 d-none d-lg-flex">
             <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
 
-              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
+              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" value='<?php echo $_GET['q']; ?>' data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
               <div class="input-group-prepend">
                 <div class="input-group-text">
                   <i class="fe fe-search"></i>
@@ -46,7 +47,7 @@ function getURL($url)
         
               <!-- Toggle -->
               <a href="#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="icon active">
+                <span class="icon<?php echo (hasUnread($_SESSION['user']['id'])? " active" : ""); ?>">
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
@@ -66,7 +67,7 @@ function getURL($url)
                     <div class="col-auto">
                 
                       <!-- Link -->
-                      <a href="#!" class="small">
+                      <a href="notifications.php" class="small">
                         View all
                       </a>
 
@@ -74,7 +75,34 @@ function getURL($url)
                   </div> <!-- / .row -->
                 </div> <!-- / .card-header -->
                 <div class="card-body">
-				
+				<div class="list-group list-group-flush my-n3">
+                <?php while ($notif_row = getNotifications($_SESSION['user']['id'], true)) {
+					?>
+					<a class="list-group-item px-0" href="#!">
+              
+                      <div class="row">
+                        <div class="col ml-n2">
+                    
+                          <!-- Content -->
+                          <div class="small text-muted">
+                            <?php echo $notif_row['text']; ?>
+                          </div>
+
+                        </div>
+                        <div class="col-auto">
+
+                          <small class="text-muted">
+                            <?php time_elapsed_string($notif_row['time']); ?>
+                          </small>
+                    
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+					<?php
+					
+				} ?>
+				</div>
 				</div>
               </div> <!-- / .dropdown-menu -->
 

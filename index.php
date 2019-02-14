@@ -12,7 +12,7 @@ require_once('header.php'); ?>
   <div class="card-body">
     <h5 class="card-title">Explore</h5>
     <p class="card-text">Search through <?php echo $internships_count; ?> available internships.</p>
-    <a href="search.php?q=" class="btn btn-primary">Show All</a>
+    <a href="search.php?s=1" class="btn btn-primary">Show All</a>
   </div>
 </div>
 </div>
