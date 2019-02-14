@@ -118,4 +118,5 @@ function getURL($url)
 
         </div> <!-- / .container -->
       </nav>
-<div class="content container">
+	  <div class="row">
+<div class="container">
