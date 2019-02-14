@@ -18,6 +18,8 @@ function getURL($url)
 	}
 	return $url;
 }
+$notifications = getNotifications($_SESSION['user']['id'], true);
+$hasUnread = hasUnread($_SESSION['user']['id']);
 if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
