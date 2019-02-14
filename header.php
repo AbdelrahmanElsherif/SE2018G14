@@ -65,7 +65,7 @@ function hTime(time) {
     var msPerMonth = msPerDay * 30;
     var msPerYear = msPerDay * 365;
 
-    var elapsed = Date.now()/1000 - time;
+    var elapsed = Date.now() - time*1000;
 
     if (elapsed < msPerMinute) {
          return Math.round(elapsed/1000) + ' seconds ago';   
