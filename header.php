@@ -14,12 +14,10 @@ function getURL($url)
 {
 	if (strpos($url, ";") !== false)
 	{
-		return explode(";", $url)[0];
+		return explode(";", $url);
 	}
 	return $url;
 }
-$notifications = getNotifications($_SESSION['user']['id'], true);
-$hasUnread = hasUnread($_SESSION['user']['id']);
 if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
@@ -111,7 +109,7 @@ function checkNotifications()
 setInterval(function() {
   if (!$("#notifBar span").hasClass('active')) checkNotifications();
 }, 5000);
-
+checkNotifications();
 </script>
               <!-- Menu -->
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
@@ -170,7 +168,7 @@ setInterval(function() {
             <!-- Navigation -->
             <ul class="navbar-nav m	r-auto">
 			
-			<?php foreach($pages as $url => $page) { echo "<li class='nav-item".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."'><a class='nav-link".(basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."' href='".getURL($url)."'>".$page."</a></li>"; } ?>
+			<?php foreach($pages as $url => $page) { echo "<li class='nav-item".( in_array(basename($_SERVER["SCRIPT_FILENAME"]),getURL($url))? " active" : "")."'><a class='nav-link".(in_array(basename($_SERVER["SCRIPT_FILENAME"]),getURL($url))? " active" : "")."' href='".getURL($url)[0]."'>".$page."</a></li>"; } ?>
           
             </ul>
 
