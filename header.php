@@ -136,8 +136,7 @@ setInterval(function() {
                   </div> <!-- / .row -->
                 </div> <!-- / .card-header -->
                 <div class="card-body">
-				<div class="list-group list-group-flush my-n3" id="notifBody">
-				</div>
+				<div class="list-group list-group-flush my-n3" id="notifBody"></div>
 				</div>
               </div> <!-- / .dropdown-menu -->
 
