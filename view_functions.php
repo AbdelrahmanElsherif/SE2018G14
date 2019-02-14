@@ -11,7 +11,7 @@ function showSearch($stmt, $link = "apply", $text = "")
       <th>City</th>
       <th>Period</th>
       <th>Type</th>
-      <th>Academic Year</th>
+      <th>Year</th>
       <th>Description</th>
       <th></th>
 	  </thead>

@@ -50,7 +50,7 @@ require_once("header.php");
       <th>City</th>
       <th>Period</th>
       <th>Type</th>
-      <th>Academic Year</th>
+      <th>Year</th>
       <th>Mobile</th>
       <th>Email?</th>
       <th>Status</th>
