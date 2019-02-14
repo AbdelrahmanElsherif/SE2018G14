@@ -16,7 +16,7 @@ function getURL($url)
 	{
 		return explode(";", $url);
 	}
-	return $url;
+	return array($url);
 }
 if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 ?>
