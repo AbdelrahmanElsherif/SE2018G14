@@ -22,7 +22,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
   $name = $_POST['name'];
 
 //ensure fields are filled properly
-if (preg_match('/^[a-z ,.\'-]+$/i', $name) === false){
+if ($name && preg_match('/^[a-z ,.\'-]+$/i', $name) === false){
   array_push($errors, "Please enter a valid name.");
 }
 if (empty($username) || !ctype_alnum($username) || (strlen($username) < 4 || strlen($username) > 16)){
