@@ -31,7 +31,7 @@ function getURL($url)
         <ul class="nav-menu">
 		<?php foreach($pages as $url => $page) { echo "<li".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " class='menu-active'" : "")."><a href='".getURL($url)."'>".$page."</a></li>"; } ?>
           
-		  <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></a>
+		  <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong></a>
             <ul>
               <li><a class="dropdown-item" href="profile.php">Profile</a></li>
               <li><div class="dropdown-divider"></div></li>
