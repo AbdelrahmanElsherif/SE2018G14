@@ -97,7 +97,7 @@ $time = time()-$time;
 
         }
 session_start(); 
-if (basename($_SERVER["SCRIPT_FILENAME"]) != "login.php" && basename($_SERVER["SCRIPT_FILENAME"]) != "register.php")) requiresAuthentication();
+if (basename($_SERVER["SCRIPT_FILENAME"]) != "login.php" && basename($_SERVER["SCRIPT_FILENAME"]) != "register.php") requiresAuthentication();
 if (file_exists(getcwd()."/backend/".basename($_SERVER['PHP_SELF']))) require_once(getcwd()."/backend/".basename($_SERVER['PHP_SELF']));
 header("X-XSS-Protection: 1; mode=block");
 header('Content-Type: text/html; charset=utf-8'); 
