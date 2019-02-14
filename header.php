@@ -56,7 +56,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 <script>
 $("#notifBar").click(function() {
 		$( "#notifBody" ).html('Please wait...');
-	$.get( "notifications.php", function( data ) {
+	$.get( "notifications.php?m=api", function( data ) {
 		$("#notifBar span").removeClass("active");
 		jQuery.each(data, function() {
   $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+this.time+'</small></div></div></a>');
