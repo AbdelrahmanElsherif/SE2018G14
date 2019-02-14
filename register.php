@@ -8,6 +8,9 @@ require_once("global_header.php");?>
 				<form method = "post">
 					<?php include ('errors.php') ?>
                     <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Your Full Name" value="" />
+                    </div>
+                    <div class="form-group">
                         <input type="text" class="form-control" name="username" placeholder="Username" value="" />
                     </div>
                     <div class="form-group">

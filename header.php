@@ -118,8 +118,6 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
 
               <!-- Menu -->
               <div class="dropdown-menu dropdown-menu-right">
-                <a href="profile.php" class="dropdown-item">Profile</a>
-                <hr class="dropdown-divider">
                 <a href="logout.php" class="dropdown-item">Logout</a>
               </div>
 
