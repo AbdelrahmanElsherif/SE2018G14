@@ -23,6 +23,7 @@ if ($internship)
 		   if ($status != $row['status'])
 		   dosql("UPDATE application SET status=:status WHERE id=:id AND status=:status2", array(":status2" => -1, ":status"=> $status,"id"=>$row['id']));
 		}
+		$stmt->execute();
 	}
 }
 else
