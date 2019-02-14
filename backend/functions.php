@@ -1,7 +1,7 @@
 <?php
 function sendNotification($user_id, $text)
 {
-	mysql_insert("notifications", array("user_id" => $user_id, "text" => $text));
+	mysql_insert("notifications", array("user_id" => $user_id, "text" => $text, "time" => time()));
 }
 function loopThrough($rows, $key, &$array)
 {
