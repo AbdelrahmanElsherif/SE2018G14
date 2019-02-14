@@ -48,12 +48,24 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
             <div class="dropdown mr-4 d-none d-lg-flex">
         
               <!-- Toggle -->
-              <a href="#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="#" id="notifBar" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon<?php echo ($hasUnread? " active" : ""); ?>">
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
+<script>
+$("#notifBar").click(function() {
+		$( "#notifBody" ).html('Please wait...');
+	$.get( "ajax/test.html", function( data ) {
+		$("#notifBar span").removeClass("active");
+		jQuery.each(data, function() {
+  $( "#notifBody" ).append('<a class="list-group-item px-0" href="'+this.link+'"><div class="row"><div class="col ml-n2"><div class="small text-muted">'+this.text+'</div></div><div class="col-auto"><small class="text-muted">'+this.time+'</small></div></div></a>');
+});
 
+
+});
+});
+</script>
               <!-- Menu -->
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
                 <div class="card-header">
@@ -77,33 +89,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                   </div> <!-- / .row -->
                 </div> <!-- / .card-header -->
                 <div class="card-body">
-				<div class="list-group list-group-flush my-n3">
-                <?php 
-				while ($notif_row = $notifications->fetch()) {
-					?>
-					<a class="list-group-item px-0" href="<?php echo $notif_row['link']; ?>">
-              
-                      <div class="row">
-                        
-                        <div class="col ml-n2">
-                          <div class="small text-muted">
-                           <?php echo $notif_row['text']; ?>
-						  </div>
-
-                        </div>
-                        <div class="col-auto">
-
-                          <small class="text-muted">
-                             <?php echo hTime($notif_row['time']); ?>
-                          </small>
-                    
-                        </div>
-                      </div> 
-
-                    </a>
-					<?php
-					
-				} ?>
+				<div class="list-group list-group-flush my-n3" id="notifBody">
 				</div>
 				</div>
               </div> <!-- / .dropdown-menu -->
