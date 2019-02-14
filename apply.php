@@ -1,6 +1,6 @@
 <?php
 $page_title = "Management";
-$pre_title = "Apply for: " . echo $internship['role'];
+$pre_title = "Apply for: " . $internship['role'];
 require_once("header.php");
 ?>
 
