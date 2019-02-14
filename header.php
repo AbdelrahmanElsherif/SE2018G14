@@ -8,7 +8,7 @@ $pages = array(
 "index.php" => "Home",
 "manage.php;application.php;apply.php" => "Manage Applications",
 "post_internship.php" => "Post Internship",
-"serch.php" => "Explore"
+"search.php" => "Explore"
 );
 function getURL($url)
 {
@@ -19,30 +19,108 @@ function getURL($url)
 	return $url;
 }
 ?>
-<header id="header">
-    <div class="container">
-      <div id="logo" class="pull-left">
-        <h1><a href="index.php" class="scrollto">INTERN</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light" id="topnav">
+        <div class="container">
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-		<?php foreach($pages as $url => $page) { echo "<li".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " class='menu-active'" : "")."><a href='".getURL($url)."'>".$page."</a></li>"; } ?>
+          <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a class="navbar-brand mr-auto" href="index.php">
+            <img src="img/logo.png" alt="Intern.com" class="navbar-brand-img">
+          </a>
+
+          <form class="form-inline mr-4 d-none d-lg-flex">
+            <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
+
+              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fe fe-search"></i>
+                </div>
+              </div>
+			  
+            </div>
+          </form>
+
+          <!-- User -->
+          <div class="navbar-user">
+      
+            <!-- Dropdown -->
+            <div class="dropdown mr-4 d-none d-lg-flex">
+        
+              <!-- Toggle -->
+              <a href="#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon active">
+                  <i class="fe fe-bell"></i>
+                </span>
+              </a>
+
+              <!-- Menu -->
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
+                <div class="card-header">
+                  <div class="row align-items-center">
+                    <div class="col">
+                
+                      <!-- Title -->
+                      <h5 class="card-header-title">
+                        Notifications
+                      </h5>
+
+                    </div>
+                    <div class="col-auto">
+                
+                      <!-- Link -->
+                      <a href="#!" class="small">
+                        View all
+                      </a>
+
+                    </div>
+                  </div> <!-- / .row -->
+                </div> <!-- / .card-header -->
+                <div class="card-body">
+				
+				</div>
+              </div> <!-- / .dropdown-menu -->
+
+            </div>
+
+            <!-- Dropdown -->
+            <div class="dropdown">
+        
+              <!-- Toggle -->
+              <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Logged in as <b><?php echo $_SESSION['user']['username']; ?></b>
+              </a>
+
+              <!-- Menu -->
+              <div class="dropdown-menu dropdown-menu-right">
+                <a href="profile.php" class="dropdown-item">Profile</a>
+                <hr class="dropdown-divider">
+                <a href="logout.php" class="dropdown-item">Logout</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
+
+            <!-- Form -->
+            <form class="mt-4 mb-3 d-md-none" action='search.php'>
+              <input type="search" class="form-control form-control-rounded" placeholder="Search" aria-label="Search">
+            </form>
+
+            <!-- Navigation -->
+            <ul class="navbar-nav m	r-auto">
+			
+			<?php foreach($pages as $url => $page) { echo "<li class='nav-item".( basename($_SERVER["SCRIPT_FILENAME"]) == getURL($url)? " active" : "")."'><a class='nav-link' href='".getURL($url)."'>".$page."</a></li>"; } ?>
           
-		  <li class="menu-has-children"><a href="#">Logged in as <strong><?php echo $_SESSION['user']['username'] ?></strong></a>
-            <ul>
-              <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-              <li><div class="dropdown-divider"></div></li>
-              <li> <a class="dropdown-item" href="logout.php">Logout</a></li>
             </ul>
-          </li>
-          <!-- <li><a href="">Contact</a></li> -->
-        </ul>
-     
-      </nav><!-- #nav-menu-container -->
 
-    </div>
-  </header><!-- #header -->
+          </div>
+
+        </div> <!-- / .container -->
+      </nav>
 <div class="content container">
