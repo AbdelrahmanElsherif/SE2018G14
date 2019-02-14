@@ -19,11 +19,19 @@ require_once("header.php");
                 </div> <!-- / .row -->
               </div>
               <div class="table-responsive mb-0" data-toggle="lists" data-lists-values="[&quot;goal-project&quot;, &quot;goal-status&quot;, &quot;goal-progress&quot;, &quot;goal-date&quot;]">
-                <?php  while ($row = $stmt->fetch())
+              
+<table class="table table-sm card-table">
+	<thead>
+      <th>Notification</th>
+      <th></th>
+	  </thead>
+	  <tbody> <?php  while ($row = $stmt->fetch())
 				{
-					print_r($row);	
+					generateRow($row);
 				}
 				?>
+				</tbody>
+				</table>
               </div>
             </div>
 
