@@ -16,8 +16,8 @@ if ($_POST)
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
 		{
-			$poster = getPoster($internship_id, $_SESSION['user']['id']);
-			if ($poster !== false)
+			$poster = getPoster($internship_id);
+			if ($poster)
 			{
 				if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
 				{
@@ -31,7 +31,7 @@ if ($_POST)
 							"mobile" => $mobile,
 							"cv" => file_get_contents($temp_path)
 						));
-						sendNotification($poster, "You received a new application for ".$poster['role']." at ".$poster['company'], "application.php?internship_id=".$internship_id);
+						sendNotification($poster['user_id'], "You received a new application for ".$poster['role']." at ".$poster['company'], "application.php?internship_id=".$internship_id);
 						$_SESSION['success'][] = "You have applied to this internship successfully";
 					}
 					else
