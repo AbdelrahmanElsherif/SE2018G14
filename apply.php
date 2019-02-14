@@ -26,8 +26,8 @@ require_once("header.php");
    generateInput("CV File", "file");
    ?>
  </div>
- <br><br>
    <div class="form-group col-md-6">
+ <br><br>
                     <label class="mb-1">
                       Show Email
                     </label>
