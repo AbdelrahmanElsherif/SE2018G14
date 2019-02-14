@@ -16,7 +16,7 @@ if ($_POST)
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
 		{
-			$poster = hasAccess($internship_id, $_SESSION['user']['id']);
+			$poster = getPoster($internship_id, $_SESSION['user']['id']);
 			if ($poster !== false)
 			{
 				if (isset($_FILES['cv_file']) && $_FILES['cv_file'])
