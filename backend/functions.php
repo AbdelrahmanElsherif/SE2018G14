@@ -1,9 +1,4 @@
 <?php
-function getEmail($user_id)
-{
-	$email = mysql_select("user", "", array("id" => $user_id), "=", "email")->fetch();
-	return $email? $email['email'] : false;
-}
 function processStatus($status)
 {
 	switch ($status)

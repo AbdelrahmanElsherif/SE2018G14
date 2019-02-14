@@ -34,11 +34,12 @@ require_once("backend/functions.php");
 	<tbody>
     <?php 
     while ($row = $stmt->fetch()) {
-		$row['user_id'] = getUser($row['user_id'])['name'];
+		$user_data = getUser($row['user_id']);
+		$row['show_email'] = $row['show_email']? $user_data['email'] : "N/A";
+		$row['user_id'] = $user_data['name'];
 		$row[] = "<a href='download.php?id=".$row['id']."'>Download CV</a>";
 		if ($row['status'] == -1) { $row[] = "<form method='POST' action='application.php?internship_id=".intval($_GET['internship_id'])."'><input type='submit' name='accept_".$row['id']."' class='btn btn-success btn-sm' value='Accept' /> <input type='submit' name='reject_".$row['id']."' class='btn btn-danger btn-sm' value='Reject' /></form>"; } else { $row[] = processStatus($row['status']); } 
 		unset($row['status']);
-		$row['show_email'] = $row['show_email']? getEmail($row['user_id']) : "N/A";
 		generateRow($row);
     }
 ?>   
