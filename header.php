@@ -92,7 +92,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                         <div class="col-auto">
 
                           <small class="text-muted">
-                            <?php time_elapsed_string($notif_row['time']); ?>
+                            <?php hTime($notif_row['time']); ?>
                           </small>
                     
                         </div>
