@@ -23,11 +23,13 @@ require_once("header.php");
 <table class="table table-sm card-table">
 	<thead>
       <th>Notification</th>
-      <th></th>
+      <th>Date</th>
+	  <th></th>
 	  </thead>
 	  <tbody> <?php  while ($row = $stmt->fetch())
 				{
 					$row['time'] = hTime($row['time']) . " ago";
+					$row['link'] = "<a href='".$row['link']."' class='btn btn-primary btn-sm'>View</a>";
 					generateRow($row);
 				}
 				?>
