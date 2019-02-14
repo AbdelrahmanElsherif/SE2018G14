@@ -47,7 +47,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
         
               <!-- Toggle -->
               <a href="#" id="notifBar" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="icon<?php echo ($hasUnread? " active" : ""); ?>">
+                <span class="icon">
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
