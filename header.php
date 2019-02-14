@@ -29,7 +29,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
           <form class="form-inline mr-4 d-none d-lg-flex">
             <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
 
-              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" value='<?php echo $_GET['q']; ?>' data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
+              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" value='<?php echo (isset($_GET['q'])? $_GET['q'] : ""); ?>' data-toggle="dropdown" placeholder="Search" aria-label="Search" aria-expanded="false">
               <div class="input-group-prepend">
                 <div class="input-group-text">
                   <i class="fe fe-search"></i>
