@@ -76,7 +76,7 @@ if (isset($_GET['q'])) $_GET['q'] = htmlentities(strip_tags($_GET['q']));
                 </div> <!-- / .card-header -->
                 <div class="card-body">
 				<div class="list-group list-group-flush my-n3">
-                <?php while ($notif_row = getNotifications($_SESSION['user']['id'], true)) {
+                <?php while ($notif_row = getNotifications($_SESSION['user']['id'], true)->fetch()) {
 					?>
 					<a class="list-group-item px-0" href="#!">
               
