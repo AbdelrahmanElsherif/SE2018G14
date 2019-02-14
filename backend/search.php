@@ -11,9 +11,7 @@ loopThrough(dosql("SELECT DISTINCT company FROM internship")->fetchAll(), "compa
 loopThrough(dosql("SELECT DISTINCT role FROM internship")->fetchAll(), "role", $roles);
 if (isset($_GET['s']) && $_GET['s'] == 1)
 {
-	$errors = array();
-	//$errors = checkRequiredFields($required_fields, $_GET);
-	if (!$errors)
+	if (!isset($_GET['q']))
 	{
 		$params = array();
 		if (isset($_GET['role']) && checkExists($_GET['role'], $roles)) $params['role'] = checkExists($_GET['role'], $roles);
@@ -25,6 +23,11 @@ if (isset($_GET['s']) && $_GET['s'] == 1)
 		if (isset($_GET['academic_year']) && checkExists($_GET['academic_year'], $academic_years)) $params['academic_year'] = checkExists($_GET['academic_year'], $academic_years);
 		
 		$stmt = mysql_select("internship", "AND" , $params, " LIKE ");
+	}
+	else	
+	{
+		$_GET['q'] = sanitizeField($_GET['q']);
+		$stmt = mysql_select("internship", "OR" , array("role" => $_GET['q'], "company" => $_GET['q'], 'field' => $_GET['field'], 'city' => $_GET['city']), " LIKE ");
 	}
 }
 ?>
