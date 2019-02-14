@@ -1,7 +1,5 @@
 <?php require_once('common.php');
-requiresAuthentication();
 $css = array("css/main.css", "fonts/feather/feather.min.css");
-$js = array("js/mobile.js");
 require_once("global_header.php");	
 require_once("view_functions.php");
 $pages = array(
