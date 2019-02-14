@@ -131,14 +131,6 @@ function getURL($url)
                  <?php echo isset($pre_title)? '<h1 class="header-title">'.$page_title.'</h1>' : ""; ?>
              
               </div>
-              <div class="col-auto">
-                
-                <!-- Button -->
-                <a href="#!" class="btn btn-primary">
-                  Create Report
-                </a>
-
-              </div>
             </div> <!-- / .row -->
           </div> <!-- / .header-body -->
 
