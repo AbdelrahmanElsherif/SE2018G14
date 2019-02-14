@@ -12,7 +12,7 @@ if ($_POST)
 	if (!$errors)
 	{
 		$mobile = $_POST['mobile'];
-		$show_email = isset($_POST['show_email']) 1 : 0;
+		$show_email = isset($_POST['show_email'])? 1 : 0;
 		$internship_id = $_POST['internship_id'];
 		$application = getApplication($internship_id, $_SESSION['user']['id']);
 		if (!$application)
