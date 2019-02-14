@@ -27,7 +27,7 @@ if (isset($_GET['s']) && $_GET['s'] == 1)
 	else	
 	{
 		$query = '%'.sanitizeField($_GET['q']).'%';
-		$stmt = mysql_select("internship", "OR" , array("role" => $query, "company" => $query, 'field' => $query, 'city' => $query), " LIKE ");
+		$stmt = mysql_select("internship", "OR" , array("role" => $query, "company" => $query, 'field' => $query, 'city' => $query, 'description' => $query, 'type' => $query, 'period' => $query), " LIKE ");
 	}
 }
 ?>
