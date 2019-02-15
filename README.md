@@ -59,7 +59,7 @@ platform is a common/known place for all Students from all majors</p>
 - <a href="https://trello.com/b/vnrzbwXx/sprint-x-assignment" target="_blank">Sprint X: Assignment</a>
 - <a href="https://drive.google.com/open?id=10K1EVA90WW_GOa4TVKCzKo76ay3V4iPJ" target="_blank">Unofficial Material Used For Organization (Communicated through informal channels)</a>
 
-<i>Note: Some tasks were assigned during sprint meetings and are not documented digitally</i>
+<i>Note: Some tasks were assigned during sprint meetings and are not documented digitally. also bug fixes can be found in commit's description.</i>
 
 
 **Contact us at aliamrfarouk@gmail.com**  
