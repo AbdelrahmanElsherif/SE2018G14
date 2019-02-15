@@ -43,8 +43,7 @@ platform is a common/known place for all Students from all majors</p>
 - عبدالرحمن توفيق مصطفي محمد الشريف
 
 
-### Task Organization 
-###### (Using <a href="https://trello.com/">Trello</a>)
+### Task Organization (Using <a href="https://trello.com/">Trello</a>)
 <i>We organized our tasks(breakdown, assignment, etc..) by dividing our work into <b>Sprints</b>, usually a Sprint would be around 7 days to 15 days depending on the load, a meeting at the start of each Sprint were held in which we gave feedback about the previous Sprint and discussed what we are gonna do in the next Sprint.</i>
 
 <i>Note: all points in this table are <b>CLICKABLE LINKS</b></i>
