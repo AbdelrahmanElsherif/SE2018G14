@@ -1,14 +1,14 @@
 <h1 align="center"> Intern.com (SE2018G14) </h1> <br>
 <p align="center">
   <a href="https://giovannimounir.net/TEMP/SE2018G14/">
-    <img alt="Intern" title="Intern" src="https://www.ultraimg.com/image/PZzz" width="450">
+    <img alt="Intern" title="Intern" src="http://tinypic.com?ref=rscy6g" width="450">
   </a>
 </p>
 
 
 <p align="center">
   <a href="https://giovannimounir.net/TEMP/SE2018G14/">
-    <img alt="Visit Site" title="Visit" src="https://www.ultraimg.com/image/PZz5" width="140">
+    <img alt="Visit Site" title="Visit" src="http://tinypic.com?ref=33vgqah" width="140">
   </a>
 </p>
 
@@ -62,9 +62,8 @@ platform is a common/known place for all Students from all majors</p>
 <i>Note: Some tasks were assigned during sprint meetings and are not documented digitally</i>
 
 
-**Contact us at aliamrfarouk@gmail.com**
-**<a href="https://giovannimounir.net/TEMP/SE2018G14/">Intern.com (click me)</a>**
-
+**Contact us at aliamrfarouk@gmail.com**  
+<a href="https://giovannimounir.net/TEMP/SE2018G14/">Intern.com (click me)</a>  
 <i>Site actual link: https://giovannimounir.net/TEMP/SE2018G14/</i>
 
 
