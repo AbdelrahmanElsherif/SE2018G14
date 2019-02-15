@@ -12,7 +12,7 @@
   </a>
 </p>
 
-## Introduction 
+### Introduction 
 
 <p>
 <a href="https://giovannimounir.net/TEMP/SE2018G14/">Intern.com</a> is simply a platform that connects companies and students seeking practical experience
@@ -22,7 +22,7 @@ Business Owners will have a platform on which they can reach the intended Studen
 platform is a common/known place for all Students from all majors</p>
 
 
-## Documents of Importance
+### Documents of Importance
 
 - <a href="https://github.com/aliamaim/SE2018G14/blob/master/Documentation/SE2018G14_WhitePaper.pdf">White Paper</a>
 - <a href="https://github.com/aliamaim/SE2018G14/blob/master/Documentation/BRD_Version0.1.pdf">Business Requirements Document (BRD)</a>
@@ -31,7 +31,7 @@ platform is a common/known place for all Students from all majors</p>
 - <a href="https://github.com/aliamaim/SE2018G14/tree/master/Documentation/assignment-1">Assignment</a>
 
 
-## Team (G14)
+### Team (G14)
 
 - علي عمرو فاروق ابوالعمايم 
 - جوفاني منير يوسف عبد المسيح
@@ -43,7 +43,7 @@ platform is a common/known place for all Students from all majors</p>
 - عبدالرحمن توفيق مصطفي محمد الشريف
 
 
-## Task Organization (Using <a href="https://trello.com/">Trello</a>)
+### Task Organization (Using <a href="https://trello.com/">Trello</a>)
 <i>We organized our tasks breakdown, assignments & determination by dividing our work into <b>Sprints</b>, usually a Sprint would be around 7 days to 15 days depending on the load, a meeting at the start of each Sprint were held in which we gave feedback about the previous Sprint and discussed what we are gonna do in the next Sprint.</i>
 
 <i>Note: all points in this table are <b>CLICKABLE LINKS</b></i>
