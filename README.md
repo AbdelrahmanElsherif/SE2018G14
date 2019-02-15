@@ -1,7 +1,7 @@
 <h1 align="center"> Intern.com (SE2018G14) </h1> <br>
 <p align="center">
   <a href="https://giovannimounir.net/TEMP/SE2018G14/">
-    <img alt="Intern" title="Intern" src="http://i64.tinypic.com/2zxs1es.jpg" width="450">
+    <img alt="Intern" title="Intern" src="http://i64.tinypic.com/141vd43.png">
   </a>
 </p>
 
